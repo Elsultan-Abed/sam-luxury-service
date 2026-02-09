@@ -1,77 +1,28 @@
 
 import React, { useState } from 'react';
-import { Language } from './types';
-import { translations } from './translations';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import BookingForm from './components/BookingForm';
 import ServiceAreas from './components/ServiceAreas';
 import Footer from './components/Footer';
+import { translations } from './translations';
+import { Language } from './types';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('nl');
   const t = translations[lang];
 
   return (
-    <div className="min-h-screen flex flex-col bg-black overflow-x-hidden pb-32 lg:pb-0">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-[#D4AF37] selection:text-black pb-32 lg:pb-0">
       <Header currentLang={lang} setLang={setLang} t={t.nav} />
 
-      <main className="flex-grow">
+      <main>
         <Hero t={t.hero} />
-
-        {/* Reservation Section */}
-        <section id="booking" className="py-48 bg-[#050505] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-full h-full opacity-[0.02] pointer-events-none diamond-pattern"></div>
-
-          <div className="max-w-7xl mx-auto px-8 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-start">
-              <div className="space-y-16">
-                <div className="space-y-8 animate-fade-in-up">
-                  <div className="inline-flex items-center gap-3 py-1 px-4 border border-white/10 glass-morphism rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse"></span>
-                    <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/60">Fleet Live Status: Available</span>
-                  </div>
-                  <h2 className="text-5xl lg:text-7xl font-serif-display italic text-white leading-tight">
-                    Your Journey, <br />Defined.
-                  </h2>
-                  <p className="text-lg text-white/40 font-light leading-relaxed max-w-md italic">
-                    {lang === 'nl'
-                      ? "Vanuit de haven tot het hartje van 't Stad, onze Mercedes V-Klasse vloot garandeert een onberispelijke rit."
-                      : lang === 'en'
-                        ? "From the port to the heart of Antwerp, our professional Mercedes-Benz fleet ensures a flawless journey."
-                        : lang === 'fr'
-                          ? "Du port au cœur d'Anvers, notre flotte professionnelle Mercedes-Benz garantit un voyage sans faille."
-                          : "Del puerto al corazón de Amberes, nuestra flota premium Mercedes-Benz garantiza un viaje impecable."}
-                  </p>
-                </div>
-
-
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="p-10 border border-white/5 glass-morphism group hover:border-[#D4AF37]/30 transition-all">
-                    <i className="fas fa-shield-halved text-2xl text-[#D4AF37] mb-6"></i>
-                    <h4 className="text-xs font-black uppercase tracking-widest text-white mb-2">Verified Safety</h4>
-                    <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest">Global Chauffeur Standards</p>
-                  </div>
-                  <div className="p-10 border border-white/5 glass-morphism group hover:border-[#D4AF37]/30 transition-all">
-                    <i className="fas fa-wifi text-2xl text-[#D4AF37] mb-6"></i>
-                    <h4 className="text-xs font-black uppercase tracking-widest text-white mb-2">Onboard Connect</h4>
-                    <p className="text-[10px] text-white/30 uppercase font-bold tracking-widest">Business Connectivity Kit</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="sticky top-32">
-                <BookingForm t={t.booking} />
-              </div>
-            </div>
-          </div>
-        </section>
 
         <Features t={t.features} />
 
-        <ServiceAreas />
+        <ServiceAreas t={t.serviceAreas} />
 
         {/* Fleet Detail Section */}
         <section id="fleet" className="py-48 bg-[#0a0a0b] relative overflow-hidden">
@@ -86,7 +37,7 @@ const App: React.FC = () => {
                     className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-1 rounded-full">
-                    <span className="text-[8px] font-black uppercase tracking-widest text-white/80">Premium Exterior</span>
+                    <span className="text-[8px] font-black uppercase tracking-widest text-white/80">{t.fleet.exteriorLabel}</span>
                   </div>
                 </div>
               </div>
@@ -99,25 +50,25 @@ const App: React.FC = () => {
                     className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-1 rounded-full">
-                    <span className="text-[8px] font-black uppercase tracking-widest text-white/80">Executive Cabin</span>
+                    <span className="text-[8px] font-black uppercase tracking-widest text-white/80">{t.fleet.interiorLabel}</span>
                   </div>
                 </div>
               </div>
             </div>
             <div className="space-y-12">
               <div className="space-y-6">
-                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#D4AF37]">The Ultimate Chauffeur Carriage</span>
-                <h2 className="text-5xl lg:text-7xl font-serif-display italic text-white">Mercedes V-Class</h2>
+                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#D4AF37]">{t.fleet.badge}</span>
+                <h2 className="text-5xl lg:text-7xl font-serif-display italic text-white">{t.fleet.title}</h2>
                 <p className="text-white/40 font-light italic leading-relaxed text-lg">
-                  More than a vehicle, it is your private executive suite on the move. Reconfigured for absolute privacy and comfort.
+                  {t.fleet.description}
                 </p>
               </div>
 
               <ul className="space-y-8">
                 {[
-                  { icon: 'fa-wifi', text: 'High-speed Onboard Connectivity' },
-                  { icon: 'fa-bottle-water', text: 'Chilled Refreshments & Fine Comforts' },
-                  { icon: 'fa-user-tie', text: 'Discreet, Multilingual Professional Chauffeurs' }
+                  { icon: 'fa-wifi', text: t.fleet.features[0] },
+                  { icon: 'fa-bottle-water', text: t.fleet.features[1] },
+                  { icon: 'fa-user-tie', text: t.fleet.features[2] }
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-6 group/item">
                     <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover/item:border-[#D4AF37] transition-colors">
@@ -131,40 +82,31 @@ const App: React.FC = () => {
           </div>
         </section>
 
-
-        {/* Luxury Banner */}
-        <section className="py-64 bg-white relative overflow-hidden flex items-center justify-center">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.05)_0%,transparent_70%)]"></div>
-          <div className="text-center relative z-10 px-8">
-            <span className="text-[10px] font-black uppercase tracking-[0.8em] text-black/20 mb-8 block">The Automotive Legend</span>
-            <h2 className="text-7xl lg:text-[150px] font-serif-display font-black text-black tracking-tighter leading-none opacity-90">MERCEDES-BENZ</h2>
-            <div className="mt-12 flex items-center justify-center gap-4">
-              <div className="h-[1px] w-24 bg-black/10"></div>
-              <span className="text-xs font-extrabold uppercase tracking-[0.5em] text-black">V-Class Excellence</span>
-              <div className="h-[1px] w-24 bg-black/10"></div>
-            </div>
+        {/* Global CTA / Booking Section */}
+        <section id="booking" className="py-48 bg-black relative">
+          <div className="max-w-3xl mx-auto px-8">
+            <BookingForm t={t.booking} />
           </div>
         </section>
       </main>
 
-      <Footer />
+      <Footer t={t.footer} />
 
-      {/* Mobile Floating Action - High Polish */}
-      <div className="fixed bottom-10 left-6 right-6 lg:hidden z-50">
-        <div className="glass-morphism p-3 rounded-full shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] flex gap-3">
-          <a
-            href="tel:+32478617101"
-            className="flex-1 bg-white text-black py-5 rounded-full font-black text-[10px] uppercase tracking-[0.4em] flex items-center justify-center gap-3 active:scale-95 transition-all"
-          >
-            <i className="fas fa-phone-alt"></i> Call
-          </a>
-          <a
-            href="https://wa.me/32478617101"
-            className="flex-1 bg-white/10 text-white py-5 rounded-full font-black text-[10px] uppercase tracking-[0.4em] flex items-center justify-center gap-3 border border-white/10 active:scale-95 transition-all"
-          >
-            <i className="fab fa-whatsapp"></i> Chat
-          </a>
-        </div>
+      {/* Luxury Floating CTA for Mobile ONLY - Fixed reaching absolute bottom */}
+      <div className="lg:hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-[90] w-[90%] flex gap-4 animate-slide-up">
+        <a
+          href="tel:+32478617101"
+          className="flex-1 glass-morphism bg-white text-black text-[10px] font-black uppercase tracking-widest py-6 px-4 rounded-full flex items-center justify-center gap-3 shadow-2xl active:scale-95 transition-all"
+        >
+          <i className="fas fa-phone-alt"></i>
+          {t.hero.ctaPhone.includes(':') ? t.hero.ctaPhone.split(':')[1].trim() : t.hero.ctaPhone}
+        </a>
+        <a
+          href="https://wa.me/32478617101"
+          className="w-16 h-16 glass-morphism bg-[#25D366] text-white rounded-full flex items-center justify-center text-xl shadow-2xl active:scale-90 transition-all"
+        >
+          <i className="fab fa-whatsapp"></i>
+        </a>
       </div>
     </div>
   );

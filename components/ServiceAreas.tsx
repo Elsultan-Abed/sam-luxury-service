@@ -1,19 +1,31 @@
 
 import React from 'react';
 
-const ServiceAreas: React.FC = () => {
+interface ServiceAreasProps {
+    t: {
+        badge: string;
+        title: string;
+        sections: {
+            airports: string;
+            cities: string;
+            crossBorder: string;
+        };
+    };
+}
+
+const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
     const areas = [
-        { title: 'Airport Transfers', items: ['Zaventem (BRU)', 'Charleroi (CRL)', 'Brussels Airport', 'Antwerp Airport'] },
-        { title: 'Major Cities', items: ['Antwerp', 'Brussels', 'Ghent', 'Bruges', 'Liège', 'Namur'] },
-        { title: 'Cross Border', items: ['Paris (CDG)', 'Amsterdam (Schiphol)', 'Düsseldorf Airport'] }
+        { title: t.sections.airports, items: ['Zaventem (BRU)', 'Charleroi (CRL)', 'Brussels Airport', 'Antwerp Airport'] },
+        { title: t.sections.cities, items: ['Antwerp', 'Brussels', 'Ghent', 'Bruges', 'Liège', 'Namur'] },
+        { title: t.sections.crossBorder, items: ['Paris (CDG)', 'Amsterdam (Schiphol)', 'Düsseldorf Airport'] }
     ];
 
     return (
         <section className="py-24 bg-black relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-8 lg:px-12">
                 <div className="mb-16">
-                    <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37]">Service Reach</span>
-                    <h2 className="text-4xl lg:text-6xl font-serif-display italic text-white mt-4">Across Belgium & Beyond</h2>
+                    <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37]">{t.badge}</span>
+                    <h2 className="text-4xl lg:text-6xl font-serif-display italic text-white mt-4">{t.title}</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

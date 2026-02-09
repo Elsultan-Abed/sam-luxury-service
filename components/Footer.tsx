@@ -1,7 +1,18 @@
 
 import React from 'react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  t: {
+    quote: string;
+    services: string;
+    headquarters: string;
+    directLine: string;
+    officialInquiries: string;
+    copyright: string;
+  };
+}
+
+const Footer: React.FC<FooterProps> = ({ t }) => {
   return (
     <footer className="bg-black text-white py-48 border-t border-white/5 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10">
@@ -15,7 +26,7 @@ const Footer: React.FC = () => {
               />
             </div>
             <p className="text-white/30 max-w-sm font-light leading-relaxed text-sm italic">
-              "We provide a seamless transition between destinations, defined by silence, comfort, and unmatched professionalism."
+              "{t.quote}"
             </p>
             <div className="flex space-x-12">
               {['whatsapp', 'facebook-f', 'instagram'].map((icon) => (
@@ -27,7 +38,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="space-y-10">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37]">Services</h4>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37]">{t.services}</h4>
             <ul className="space-y-6 text-white/30 text-[10px] font-bold uppercase tracking-[0.4em]">
               <li><a href="#" className="hover:text-white transition-colors">Brussels Airport</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Paris Executive</a></li>
@@ -37,14 +48,14 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="space-y-10">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37]">Headquarters</h4>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37]">{t.headquarters}</h4>
             <div className="space-y-10">
               <div className="flex flex-col gap-2">
-                <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/20">Direct Line</span>
+                <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/20">{t.directLine}</span>
                 <a href="tel:+32478617101" className="text-xl text-white font-serif-display italic hover:text-[#D4AF37] transition-colors">+32 478 61 71 01</a>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/20">Official Inquiries</span>
+                <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/20">{t.officialInquiries}</span>
                 <a href="mailto:info@samluxuryservice.be" className="text-sm font-light text-white/60 hover:text-white transition-colors">info@samluxuryservice.be</a>
               </div>
             </div>
@@ -53,7 +64,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-48 pt-12 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-10">
           <p className="text-[9px] text-white/10 uppercase tracking-[0.6em] font-black">
-            Copyright © {new Date().getFullYear()} SAM Luxury Service · Excellence in Motion
+            Copyright © {new Date().getFullYear()} SAM Luxury Service · {t.copyright}
           </p>
           <div className="flex items-center gap-16 opacity-10">
             <i className="fab fa-cc-visa text-2xl"></i>
