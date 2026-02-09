@@ -1,5 +1,5 @@
 
-export type Language = 'nl' | 'en' | 'fr';
+export type Language = 'nl' | 'en' | 'fr' | 'es';
 
 export interface Translations {
   nav: {

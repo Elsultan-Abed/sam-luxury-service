@@ -88,5 +88,34 @@ export const translations: Record<string, Translations> = {
       fair: { title: "Excellence Classe V", desc: "Découvrez le summum du luxe automobile. Un sanctuaire de cuir et de sérénité pour vos trajets." },
       local: { title: "Experts de la Ville", desc: "Du port aux quartiers historiques, nous maîtrisons Anvers pour vous offrir le meilleur itinéraire." }
     }
+  },
+  es: {
+    nav: {
+      home: "Inicio",
+      services: "La Flota",
+      booking: "Reservas",
+      contact: "Contacto"
+    },
+    hero: {
+      title: "SAM Luxury Service: La Élite de Amberes",
+      subtitle: "Usted merece nada menos que la perfección absoluta. Nuestra flota Mercedes-Benz Clase V es símbolo de prestigio, confort y discreción.",
+      ctaPhone: "Contacto Directo: +32 478 61 71 01",
+      ctaWhatsApp: "Reserve su Chófer"
+    },
+    booking: {
+      title: "Reserva Exclusiva",
+      pickup: "Lugar de Recogida",
+      dropoff: "Destino Final",
+      date: "Fecha",
+      time: "Hora",
+      passengers: "Pasajeros",
+      submit: "Confirmar Reserva",
+      success: "Solicitud recibida. Su chófer personal confirmará su viaje en breve."
+    },
+    features: {
+      fast: { title: "Puntualidad Infalible", desc: "Su tiempo es sagrado. Garantizamos una precisión absoluta en cada uno de sus traslados." },
+      fair: { title: "Excelencia Clase V", desc: "Descubra el máximo lujo automotriz. Un santuario de cuero y serenidad para sus trayectos." },
+      local: { title: "Expertos en la Ciudad", desc: "Desde el puerto hasta los distritos históricos, dominamos Amberes para ofrecerle la mejor ruta." }
+    }
   }
 };

@@ -39,7 +39,9 @@ const App: React.FC = () => {
                       ? "Vanuit de haven tot het hartje van 't Stad, onze Mercedes V-Klasse vloot garandeert een onberispelijke rit."
                       : lang === 'en'
                         ? "From the port to the heart of Antwerp, our professional Mercedes-Benz fleet ensures a flawless journey."
-                        : "Du port au cœur d'Anvers, notre flotte professionnelle Mercedes-Benz garantit un voyage sans faille."}
+                        : lang === 'fr'
+                          ? "Du port au cœur d'Anvers, notre flotte professionnelle Mercedes-Benz garantit un voyage sans faille."
+                          : "Del puerto al corazón de Amberes, nuestra flota premium Mercedes-Benz garantiza un viaje impecable."}
                   </p>
                 </div>
 
