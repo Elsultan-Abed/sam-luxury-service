@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
         <div className="max-w-4xl space-y-8 lg:space-y-12">
           <div className="flex items-center gap-4 animate-fade-in">
             <div className="h-[1px] w-12 lg:w-16 bg-[#D4AF37]"></div>
-            <span className="text-[10px] lg:text-[11px] font-extrabold uppercase tracking-[0.4em] lg:tracking-[0.6em] text-[#D4AF37]">Premium Antwerp Chauffeur</span>
+            <span className="text-[10px] lg:text-[11px] font-extrabold uppercase tracking-[0.4em] lg:tracking-[0.6em] text-[#D4AF37]">Belgium's Elite Chauffeur</span>
           </div>
 
           <h1 className="text-5xl lg:text-9xl font-serif-display text-white leading-[0.95] tracking-tight">

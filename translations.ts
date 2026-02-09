@@ -10,14 +10,14 @@ export const translations: Record<string, Translations> = {
       contact: "Contact"
     },
     hero: {
-      title: "SAM Luxury Service: De Elite van Antwerpen",
-      subtitle: "U verdient niets minder dan absolute perfectie. Onze Mercedes-Benz V-Klasse vloot staat symbool voor prestige, comfort en discretie.",
+      title: "SAM Luxury Service: De Elite van België",
+      subtitle: "U verdient niets minder dan absolute perfectie. Onze Mercedes-Benz V-Klasse vloot staat symbool voor prestige, comfort en discretie doorheen heel België.",
       ctaPhone: "Direct contact: +32 478 61 71 01",
       ctaWhatsApp: "Bestel uw Chauffeur"
     },
     booking: {
       title: "Exclusieve Reservering",
-      pickup: "Ophaaladres",
+      pickup: "Ophaaladres (Airport of Stad)",
       dropoff: "Bestemming",
       date: "Datum",
       time: "Uur",
@@ -26,27 +26,27 @@ export const translations: Record<string, Translations> = {
       success: "Uw verzoek is ontvangen. Uw persoonlijke chauffeur bevestigt binnen enkele ogenblikken."
     },
     features: {
-      fast: { title: "Onberispelijke Punctualiteit", desc: "Tijd is ons kostbaarste goed. Wij garanderen een feilloze timing voor elke afspraak." },
-      fair: { title: "V-Klasse Excellence", desc: "Ervaar de ultieme luxe van een privélounge op wielen. Leder, rust en een vlekkeloze service." },
-      local: { title: "Uw Gids in Antwerpen", desc: "Van de haven tot de diamantwijk, wij kennen de stad en haar geheimen als geen ander." }
+      fast: { title: "Airport Transfers", desc: "Zaventem (BRU), Charleroi (CRL) of Parijs (CDG). Wij garanderen een feilloze timing voor uw vlucht." },
+      fair: { title: "Nationale Dekking", desc: "Van Antwerpen en Brussel tot Gent en Brugge. Wij verzorgen uw luxe transport in heel België." },
+      local: { title: "V-Klasse Excellence", desc: "Ervaar de ultieme luxe van een privélounge op wielen. Leder, rust en een vlekkeloze service." }
     }
   },
   en: {
     nav: {
       home: "Home",
-      services: "The Fleet",
+      services: "Services",
       booking: "Reservation",
       contact: "Contact"
     },
     hero: {
-      title: "SAM Luxury Service: Antwerp's Elite Chauffeur",
-      subtitle: "Redefining the standard of premium travel. Step into our world-class Mercedes-Benz fleet for a journey beyond expectations.",
+      title: "SAM Luxury Service: Belgium's Elite Chauffeur",
+      subtitle: "Redefining the standard of premium travel. Step into our world-class Mercedes-Benz fleet for a journey beyond expectations across Belgium.",
       ctaPhone: "Call Direct: +32 478 61 71 01",
       ctaWhatsApp: "Secure Your Chauffeur"
     },
     booking: {
       title: "Secure Your Journey",
-      pickup: "Pickup Location",
+      pickup: "Pickup (Airport or City)",
       dropoff: "Final Destination",
       date: "Preferred Date",
       time: "Pickup Time",
@@ -55,27 +55,27 @@ export const translations: Record<string, Translations> = {
       success: "Reservation request sent. Your elite chauffeur will confirm your journey shortly."
     },
     features: {
-      fast: { title: "Infallible Punctuality", desc: "Every second counts in prestige travel. We ensure arrival with surgical precision for all departures." },
-      fair: { title: "Mercedes-Benz Protocol", desc: "The V-Class is not just a car; it's a mobile sanctuary of leather, luxury, and silent performance." },
-      local: { title: "City Ambassadors", desc: "From the Port of Antwerp to the Royal Museum, we navigate the city with unparalleled local mastery." }
+      fast: { title: "Airport Transfers", desc: "Premium transfers to Zaventem (BRU), Charleroi (CRL), and Paris (CDG) with surgical precision." },
+      fair: { title: "National Coverage", desc: "From Brussels to Bruges, we provide high-end chauffeur services across all major Belgian cities." },
+      local: { title: "Mercedes-Benz Protocol", desc: "The V-Class is not just a car; it's a mobile sanctuary of leather, luxury, and silent performance." }
     }
   },
   fr: {
     nav: {
       home: "Accueil",
-      services: "La Flotte",
+      services: "Services",
       booking: "Réservation",
       contact: "Contact"
     },
     hero: {
-      title: "SAM Luxury Service: L'Élite d'Anvers",
-      subtitle: "L'excellence à chaque kilomètre. Voyagez dans le confort absolu de notre flotte Mercedes-Benz et vivez l'exceptionnel.",
+      title: "SAM Luxury Service: L'Élite de Belgique",
+      subtitle: "L'excellence à chaque kilomètre. Voyagez dans le confort absolu de notre flotte Mercedes-Benz à travers toute la Belgique.",
       ctaPhone: "Contact Direct: +32 478 61 71 01",
       ctaWhatsApp: "Réserver Votre Chauffeur"
     },
     booking: {
       title: "Réservation Exclusive",
-      pickup: "Lieu de Prise en Charge",
+      pickup: "Lieu de Prise en Charge (Aéroport ou Ville)",
       dropoff: "Destination Finale",
       date: "Date du Trajet",
       time: "Heure de Départ",
@@ -84,27 +84,27 @@ export const translations: Record<string, Translations> = {
       success: "Demande envoyée. Votre chauffeur personnel confirmera votre trajet d'ici quelques instants."
     },
     features: {
-      fast: { title: "Ponctualité Absolue", desc: "Votre temps est sacré. Nous garantissons une précision sans faille pour tous vos déplacements d'affaires." },
-      fair: { title: "Excellence Classe V", desc: "Découvrez le summum du luxe automobile. Un sanctuaire de cuir et de sérénité pour vos trajets." },
-      local: { title: "Experts de la Ville", desc: "Du port aux quartiers historiques, nous maîtrisons Anvers pour vous offrir le meilleur itinéraire." }
+      fast: { title: "Transferts Aéroport", desc: "Zaventem (BRU), Charleroi (CRL) ou Paris (CDG). Nous garantissons une ponctualité sans faille." },
+      fair: { title: "Couverture Nationale", desc: "De Bruxelles à Bruges en passant par Anvers, nous assurons vos trajets de prestige partout en Belgique." },
+      local: { title: "Excellence Classe V", desc: "Découvrez le summum du luxe automobile. Un sanctuaire de cuir et de sérénité pour vos trajets." }
     }
   },
   es: {
     nav: {
       home: "Inicio",
-      services: "La Flota",
+      services: "Servicios",
       booking: "Reservas",
       contact: "Contacto"
     },
     hero: {
-      title: "SAM Luxury Service: La Élite de Amberes",
-      subtitle: "Usted merece nada menos que la perfección absoluta. Nuestra flota Mercedes-Benz Clase V es símbolo de prestigio, confort y discreción.",
+      title: "SAM Luxury Service: La Élite de Bélgica",
+      subtitle: "Usted merece nada menos que la perfección absoluta. Nuestra flota Mercedes-Benz Clase V ofrece prestigio y discreción en toda Bélgica.",
       ctaPhone: "Contacto Directo: +32 478 61 71 01",
       ctaWhatsApp: "Reserve su Chófer"
     },
     booking: {
       title: "Reserva Exclusiva",
-      pickup: "Lugar de Recogida",
+      pickup: "Recogida (Aeropuerto o Ciudad)",
       dropoff: "Destino Final",
       date: "Fecha",
       time: "Hora",
@@ -113,9 +113,9 @@ export const translations: Record<string, Translations> = {
       success: "Solicitud recibida. Su chófer personal confirmará su viaje en breve."
     },
     features: {
-      fast: { title: "Puntualidad Infalible", desc: "Su tiempo es sagrado. Garantizamos una precisión absoluta en cada uno de sus traslados." },
-      fair: { title: "Excelencia Clase V", desc: "Descubra el máximo lujo automotriz. Un santuario de cuero y serenidad para sus trayectos." },
-      local: { title: "Expertos en la Ciudad", desc: "Desde el puerto hasta los distritos históricos, dominamos Amberes para ofrecerle la mejor ruta." }
+      fast: { title: "Traslados al Aeropuerto", desc: "Zaventem (BRU), Charleroi (CRL) o París (CDG). Garantizamos puntualidad absoluta para su vuelo." },
+      fair: { title: "Cobertura Nacional", desc: "De Bruselas a Brujas, pasando por Amberes, ofrecemos servicios de chófer premium en toda Bélgica." },
+      local: { title: "Excelencia Clase V", desc: "Descubra el máximo lujo automotriz. Un santuario de cuero y serenidad para sus trayectos." }
     }
   }
 };
