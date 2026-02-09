@@ -56,7 +56,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
     <div className="relative">
       <div className="absolute -top-12 -left-12 w-64 h-64 bg-[#D4AF37]/5 blur-[80px] rounded-full pointer-events-none"></div>
 
-      <form onSubmit={handleSubmit} className="relative glass-morphism p-12 space-y-12">
+      <form onSubmit={handleSubmit} className="relative glass-morphism p-8 lg:p-12 space-y-10 lg:space-y-12">
         <div className="flex flex-col gap-2 mb-4">
           <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#D4AF37]">{t.badge}</span>
           <h3 className="text-3xl font-serif-display text-white">{t.title}</h3>

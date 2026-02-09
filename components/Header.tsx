@@ -50,12 +50,12 @@ const Header: React.FC<HeaderProps> = ({ currentLang, setLang, t }) => {
           </nav>
 
           <div className="flex items-center gap-3">
-            <div className="flex bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
+            <div className="flex bg-white/5 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
               {(['nl', 'en', 'fr', 'es'] as Language[]).map((l) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`px-3 lg:px-4 py-1.5 rounded-full text-[10px] font-black uppercase transition-all tracking-widest ${currentLang === l ? 'bg-white text-black' : 'text-white/40 hover:text-white'}`}
+                  className={`px-3 lg:px-4 py-2 rounded-full text-[10px] font-black uppercase transition-all tracking-widest ${currentLang === l ? 'bg-white text-black' : 'text-white/40 hover:text-white'}`}
                 >
                   {l.substring(0, 2)}
                 </button>
