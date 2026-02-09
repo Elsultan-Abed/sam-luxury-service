@@ -20,36 +20,36 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
       </div>
 
       {/* Decorative Star pattern simulation */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
 
       <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10 w-full">
         <div className="max-w-4xl space-y-12">
           <div className="flex items-center gap-4 animate-fade-in">
-             <div className="h-[1px] w-16 bg-[#D4AF37]"></div>
-             <span className="text-[11px] font-extrabold uppercase tracking-[0.6em] text-[#D4AF37]">Premium Antwerp Chauffeur</span>
+            <div className="h-[1px] w-16 bg-[#D4AF37]"></div>
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.6em] text-[#D4AF37]">Premium Antwerp Chauffeur</span>
           </div>
-          
+
           <h1 className="text-6xl lg:text-9xl font-serif-display text-white leading-[0.95] tracking-tight">
             <span className="block italic font-light opacity-80 mb-2">Excellence in</span>
             <span className="block font-black text-gradient-silver">Motion.</span>
           </h1>
-          
+
           <p className="text-xl lg:text-2xl text-white/50 leading-relaxed max-w-2xl font-light italic">
             "{t.subtitle}"
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 pt-6">
-            <a 
-              href="tel:+32478617101" 
+
+          <div className="hidden sm:flex flex-col sm:flex-row gap-6 pt-6">
+            <a
+              href="tel:+32478617101"
               className="btn-luxury flex items-center justify-center gap-4 bg-white text-black font-extrabold py-6 px-12 text-[12px] uppercase tracking-[0.4em] shadow-2xl hover:bg-[#D4AF37] hover:text-black transition-colors"
             >
               <i className="fas fa-phone-alt"></i>
               {t.ctaPhone}
             </a>
-            
-            <a 
-              href="https://wa.me/32478617101" 
+
+            <a
+              href="https://wa.me/32478617101"
               className="btn-luxury flex items-center justify-center gap-4 bg-transparent text-white border border-white/20 font-extrabold py-6 px-12 text-[12px] uppercase tracking-[0.4em] backdrop-blur-sm hover:bg-white/5 transition-colors"
             >
               <i className="fab fa-whatsapp"></i>

@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const t = translations[lang];
 
   return (
-    <div className="min-h-screen flex flex-col bg-black overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-black overflow-x-hidden pb-32 lg:pb-0">
       <Header currentLang={lang} setLang={setLang} t={t.nav} />
 
       <main className="flex-grow">
