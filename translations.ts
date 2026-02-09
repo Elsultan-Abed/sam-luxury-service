@@ -49,7 +49,7 @@ export const translations: Record<Language, Translations> = {
       interiorLabel: "Executive Cabin",
       features: [
         'High-speed Onboard Connectiviteit',
-        'Gekoelde Verfrissingen & Comfort',
+        'Gekoelde Verfrissingen (Fridge & Cold Water)',
         'Discrete, Meertalige Professional Chauffeurs'
       ]
     },
@@ -118,7 +118,7 @@ export const translations: Record<Language, Translations> = {
       interiorLabel: "Executive Cabin",
       features: [
         'High-speed Onboard Connectivity',
-        'Chilled Refreshments & Fine Comforts',
+        'Fridge with Cold Water included',
         'Discreet, Multilingual Professional Chauffeurs'
       ]
     },
@@ -187,7 +187,7 @@ export const translations: Record<Language, Translations> = {
       interiorLabel: "Cabine Exécutive",
       features: [
         'Connectivité Bord Haute Vitesse',
-        'Rafraîchissements et Confort',
+        'Réfrigérateur avec Eau Fraîche incluse',
         'Chauffeurs Professionnels Discrets et Polyglottes'
       ]
     },
@@ -256,7 +256,7 @@ export const translations: Record<Language, Translations> = {
       interiorLabel: "Cabina Ejecutiva",
       features: [
         'Conectividad a Bordo de Alta Velocidad',
-        'Refrescos y Máximo Confort',
+        'Nevera con Agua Fría incluida',
         'Chóferes Profesionales Discretos y Multilingües'
       ]
     },
