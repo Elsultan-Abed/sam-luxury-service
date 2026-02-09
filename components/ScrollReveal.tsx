@@ -37,8 +37,10 @@ export const ScrollReveal = ({
                 variants={variants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-120px" }}
                 transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+                style={{ willChange: "transform, opacity" }}
+                className="transform-gpu"
             >
                 {children}
             </motion.div>

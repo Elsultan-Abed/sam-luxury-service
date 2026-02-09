@@ -54,7 +54,9 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
                                 <img
                                     src={area.image}
                                     alt={area.label}
-                                    className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all duration-1000"
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all duration-1000 transform-gpu"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
 

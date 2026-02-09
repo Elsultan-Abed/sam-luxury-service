@@ -40,7 +40,9 @@ const App: React.FC = () => {
                     <img
                       src="/assets/mercedes-v-class-exterior.png"
                       alt="Mercedes V-Class Exterior"
-                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 transform-gpu"
                     />
                     <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-1 rounded-full">
                       <span className="text-[8px] font-black uppercase tracking-widest text-white/80">{t.fleet.exteriorLabel}</span>
@@ -56,7 +58,9 @@ const App: React.FC = () => {
                     <img
                       src="/assets/mercedes-v-class-interior.png"
                       alt="Mercedes V-Class Interior"
-                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 transform-gpu"
                     />
                     <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-1 rounded-full">
                       <span className="text-[8px] font-black uppercase tracking-widest text-white/80">{t.fleet.interiorLabel}</span>

@@ -14,10 +14,10 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ t }) => {
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center bg-black overflow-hidden pt-32 lg:pt-24 pb-12 lg:pb-0">
-      {/* Background Lighting Elements */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-[#D4AF37]/5 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[60%] bg-white/5 rounded-full blur-[100px]"></div>
+      {/* Background Lighting Elements - Optimized for mobile */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-[#D4AF37]/5 rounded-full blur-[80px] lg:blur-[120px]"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[60%] bg-white/5 rounded-full blur-[60px] lg:blur-[100px]"></div>
       </div>
 
       {/* Decorative Star pattern simulation */}
