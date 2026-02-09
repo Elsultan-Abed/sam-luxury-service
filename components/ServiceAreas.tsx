@@ -81,7 +81,6 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
             </div>
         </section>
     );
-    );
 };
 
 export default ServiceAreas;
