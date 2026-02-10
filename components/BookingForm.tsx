@@ -14,8 +14,8 @@ interface BookingFormProps {
     submit: string;
     success: string;
     passengers: string;
-    sedan: string;
-    vclass: string;
+    oneGuest: string;
+    multiGuests: string;
     secured: string;
     verified: string;
   };
@@ -29,7 +29,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
     dropoff: '',
     date: '',
     time: '',
-    passengers: t.sedan
+    passengers: `1 ${t.oneGuest}`
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -64,7 +64,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
 
         <div className="grid grid-cols-1 gap-8">
           <div className="space-y-3">
-            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.pickup}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/80">{t.pickup}</label>
             <div className="relative group">
               <input
                 required
@@ -80,7 +80,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
           </div>
 
           <div className="space-y-3">
-            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.dropoff}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/80">{t.dropoff}</label>
             <div className="relative group">
               <input
                 required
@@ -98,7 +98,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-3">
-            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.date}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/80">{t.date}</label>
             <input
               required
               name="date"
@@ -109,7 +109,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
             />
           </div>
           <div className="space-y-3">
-            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.time}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/80">{t.time}</label>
             <input
               required
               name="time"
@@ -120,7 +120,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
             />
           </div>
           <div className="space-y-3 relative">
-            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.passengers}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/80">{t.passengers}</label>
             <div className="relative">
               <select
                 name="passengers"
@@ -128,8 +128,14 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
                 onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white font-bold appearance-none text-[11px] focus:border-[#D4AF37]"
               >
-                <option className="bg-[#111]" value={t.sedan}>{t.sedan}</option>
-                <option className="bg-[#111]" value={t.vclass}>{t.vclass}</option>
+                {[1, 2, 3, 4, 5, 6, 7].map(num => {
+                  const label = num === 1 ? t.oneGuest : t.multiGuests;
+                  return (
+                    <option key={num} className="bg-[#111]" value={`${num} ${label}`}>
+                      {num} {label}
+                    </option>
+                  );
+                })}
               </select>
               <i className="fas fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-white/40 text-[10px] pointer-events-none"></i>
             </div>

@@ -26,8 +26,8 @@ export interface Translations {
     submit: string;
     success: string;
     passengers: string;
-    sedan: string;
-    vclass: string;
+    oneGuest: string;
+    multiGuests: string;
     secured: string;
     verified: string;
   };
