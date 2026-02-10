@@ -64,7 +64,7 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
                                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                                     <div className="mb-6">
                                         <span className="text-[8px] font-black uppercase tracking-[0.3em] text-[#D4AF37] mb-2 block">{area.label}</span>
-                                        <h3 className="text-white font-black text-2xl uppercase tracking-widest leading-none">{area.title}</h3>
+                                        <h3 className="text-white font-black text-xl md:text-2xl uppercase tracking-widest leading-none">{area.title}</h3>
                                     </div>
 
                                     <div className="h-[140px]">

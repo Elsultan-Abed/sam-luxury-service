@@ -43,11 +43,22 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
     e.preventDefault();
     setLoading(true);
 
-    const message = `*New Booking Request*%0A%0A*Pickup:* ${formData.pickup}%0A*Dropoff:* ${formData.dropoff}%0A*Date:* ${formData.date}%0A*Time:* ${formData.time}%0A*Passengers:* ${formData.passengers}`;
-    const whatsappUrl = `https://wa.me/32478617101?text=${message}`;
+    const subject = `New Booking Request from SAM Luxury Service Website`;
+    const body = `*New Booking Request*
+
+Pickup: ${formData.pickup}
+Dropoff: ${formData.dropoff}
+Date: ${formData.date}
+Time: ${formData.time}
+Passengers: ${formData.passengers}
+
+---
+Sent from Sam Luxury Service`;
+
+    const mailtoUrl = `mailto:Info@samluxuryservice.be?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
+      window.location.href = mailtoUrl;
       setLoading(false);
     }, 800);
   };

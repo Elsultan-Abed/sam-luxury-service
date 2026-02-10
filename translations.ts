@@ -59,7 +59,7 @@ export const translations: Record<Language, Translations> = {
       badge: "Reikwijdte",
       title: "Doorheen België & Verder",
       sections: {
-        airports: "Luchthavenvervoer",
+        airports: "Luchthaven",
         cities: "Grote Steden",
         crossBorder: "Internationaal"
       }
