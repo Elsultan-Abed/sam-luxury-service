@@ -41,7 +41,7 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
             <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center mb-12 lg:mb-20">
                 <ScrollReveal>
                     <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37] mb-6 block">{t.badge}</span>
-                    <h2 className="text-4xl lg:text-7xl font-serif-display italic text-white">{t.title}</h2>
+                    <h2 className="text-4xl lg:text-7xl font-serif-display italic text-white pb-4 leading-relaxed">{t.title}</h2>
                 </ScrollReveal>
             </div>
 
@@ -67,14 +67,16 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
                                         <h3 className="text-white font-black text-2xl uppercase tracking-widest leading-none">{area.title}</h3>
                                     </div>
 
-                                    <ul className="space-y-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-all duration-700">
-                                        {area.items.map((item, j) => (
-                                            <li key={j} className="flex items-center gap-3 text-white/60">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]/40"></div>
-                                                <span className="text-[10px] font-bold uppercase tracking-widest">{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <div className="h-[140px]">
+                                        <ul className="space-y-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-all duration-700">
+                                            {area.items.map((item, j) => (
+                                                <li key={j} className="flex items-center gap-3 text-white/60">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]/40"></div>
+                                                    <span className="text-[10px] font-bold uppercase tracking-widest">{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
