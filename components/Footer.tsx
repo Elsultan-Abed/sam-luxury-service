@@ -28,13 +28,6 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
             <p className="text-white/30 max-w-sm font-light leading-relaxed text-sm italic">
               "{t.quote}"
             </p>
-            <div className="flex space-x-12">
-              {['whatsapp', 'facebook-f', 'instagram'].map((icon) => (
-                <a key={icon} href="#" className="text-white/20 hover:text-[#D4AF37] transition-all text-sm group">
-                  <i className={`fab fa-${icon} group-hover:scale-125 transition-transform duration-500`}></i>
-                </a>
-              ))}
-            </div>
           </div>
 
           <div className="space-y-10">
@@ -62,16 +55,6 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
           </div>
         </div>
 
-        <div className="mt-48 pt-12 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-10">
-          <p className="text-[9px] text-white/10 uppercase tracking-[0.6em] font-black">
-            Copyright © {new Date().getFullYear()} SAM Luxury Service · {t.copyright}
-          </p>
-          <div className="flex items-center gap-16 opacity-10">
-            <i className="fab fa-cc-visa text-2xl"></i>
-            <i className="fab fa-cc-mastercard text-2xl"></i>
-            <i className="fab fa-apple-pay text-3xl"></i>
-          </div>
-        </div>
       </div>
     </footer>
   );
