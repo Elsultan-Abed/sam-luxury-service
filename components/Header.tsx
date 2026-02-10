@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ currentLang, setLang, t }) => {
               <img
                 src="/assets/logo.png"
                 alt="SAM Luxury Service"
-                className="h-full w-auto object-contain hover:scale-105 transition-transform duration-500 brightness-0 invert"
+                className="h-full w-auto object-contain hover:scale-105 transition-transform duration-500 grayscale brightness-[10] mix-blend-screen"
               />
             </a>
           </div>

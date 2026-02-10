@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
               <img
                 src="/assets/logo.png"
                 alt="SAM Luxury Service"
-                className="h-24 w-auto object-contain brightness-110"
+                className="h-24 w-auto object-contain grayscale brightness-[10] mix-blend-screen"
               />
             </div>
             <p className="text-white/30 max-w-sm font-light leading-relaxed text-sm italic">
