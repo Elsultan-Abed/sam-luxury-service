@@ -61,7 +61,7 @@ export const translations: Record<Language, Translations> = {
       sections: {
         airports: "Luchthavenvervoer",
         cities: "Grote Steden",
-        crossBorder: "Grensoverschrijdend"
+        crossBorder: "Internationaal"
       }
     },
     footer: {

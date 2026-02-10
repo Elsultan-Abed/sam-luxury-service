@@ -18,19 +18,6 @@ const Features: React.FC<FeaturesProps> = ({ t }) => {
   return (
     <section id="services" className="py-24 lg:py-48 bg-black relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-16 lg:mb-32">
-          <div className="lg:col-span-8">
-            <ScrollReveal>
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#D4AF37] mb-6 block">{t.badge}</span>
-              <h2 className="text-5xl lg:text-7xl font-serif-display italic text-white leading-none">{t.title}</h2>
-            </ScrollReveal>
-          </div>
-          <div className="lg:col-span-4 pb-4">
-            <ScrollReveal delay={0.2}>
-              <p className="text-white/40 text-sm font-light italic leading-relaxed">{t.subtitle}</p>
-            </ScrollReveal>
-          </div>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-32">
           {[

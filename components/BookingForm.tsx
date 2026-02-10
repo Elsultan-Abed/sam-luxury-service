@@ -62,9 +62,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
           <h3 className="text-3xl font-serif-display text-white">{t.title}</h3>
         </div>
 
-        <div className="grid grid-cols-1 gap-12">
+        <div className="grid grid-cols-1 gap-8">
           <div className="space-y-3">
-            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{t.pickup}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.pickup}</label>
             <div className="relative group">
               <input
                 required
@@ -73,14 +73,14 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
                 onChange={handleChange}
                 type="text"
                 placeholder={t.pickupPlaceholder}
-                className="w-full bg-transparent border-b border-white/10 py-4 outline-none text-white focus:border-[#D4AF37] transition-all placeholder:text-white/10 font-light"
+                className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light"
               />
-              <i className="fas fa-map-pin absolute right-0 top-4 text-white/10 text-xs"></i>
+              <i className="fas fa-map-pin absolute right-5 top-1/2 -translate-y-1/2 text-white/20 text-xs"></i>
             </div>
           </div>
 
           <div className="space-y-3">
-            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{t.dropoff}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.dropoff}</label>
             <div className="relative group">
               <input
                 required
@@ -89,48 +89,50 @@ const BookingForm: React.FC<BookingFormProps> = ({ t }) => {
                 onChange={handleChange}
                 type="text"
                 placeholder={t.dropoffPlaceholder}
-                className="w-full bg-transparent border-b border-white/10 py-4 outline-none text-white focus:border-[#D4AF37] transition-all placeholder:text-white/10 font-light"
+                className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light"
               />
-              <i className="fas fa-location-arrow absolute right-0 top-4 text-white/10 text-xs"></i>
+              <i className="fas fa-location-arrow absolute right-5 top-1/2 -translate-y-1/2 text-white/20 text-xs"></i>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-3">
-            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{t.date}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.date}</label>
             <input
               required
               name="date"
               value={formData.date}
               onChange={handleChange}
               type="date"
-              className="w-full bg-transparent border-b border-white/10 py-4 outline-none text-white font-bold uppercase text-[11px] [color-scheme:dark]"
+              className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white font-bold uppercase text-[11px] [color-scheme:dark] focus:border-[#D4AF37]"
             />
           </div>
           <div className="space-y-3">
-            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{t.time}</label>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.time}</label>
             <input
               required
               name="time"
               value={formData.time}
               onChange={handleChange}
               type="time"
-              className="w-full bg-transparent border-b border-white/10 py-4 outline-none text-white font-bold text-[11px] [color-scheme:dark]"
+              className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white font-bold text-[11px] [color-scheme:dark] focus:border-[#D4AF37]"
             />
           </div>
           <div className="space-y-3 relative">
-            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{t.passengers}</label>
-            <select
-              name="passengers"
-              value={formData.passengers}
-              onChange={handleChange}
-              className="w-full bg-transparent border-b border-white/10 py-4 outline-none text-white font-bold appearance-none text-[11px]"
-            >
-              <option className="bg-black" value={t.sedan}>{t.sedan}</option>
-              <option className="bg-black" value={t.vclass}>{t.vclass}</option>
-            </select>
-            <i className="fas fa-chevron-down absolute right-0 bottom-4 text-white/20 text-[10px] pointer-events-none"></i>
+            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">{t.passengers}</label>
+            <div className="relative">
+              <select
+                name="passengers"
+                value={formData.passengers}
+                onChange={handleChange}
+                className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white font-bold appearance-none text-[11px] focus:border-[#D4AF37]"
+              >
+                <option className="bg-[#111]" value={t.sedan}>{t.sedan}</option>
+                <option className="bg-[#111]" value={t.vclass}>{t.vclass}</option>
+              </select>
+              <i className="fas fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-white/40 text-[10px] pointer-events-none"></i>
+            </div>
           </div>
         </div>
 

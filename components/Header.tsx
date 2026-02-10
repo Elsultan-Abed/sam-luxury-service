@@ -24,11 +24,11 @@ const Header: React.FC<HeaderProps> = ({ currentLang, setLang, t }) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center h-full">
-            <a href="#" className="flex items-center h-12 lg:h-16">
+            <a href="#" className="flex items-center h-16 lg:h-24">
               <img
                 src="/assets/logo.png"
                 alt="SAM Luxury Service"
-                className="h-full w-auto object-contain hover:scale-105 transition-transform duration-500"
+                className="h-full w-auto object-contain hover:scale-105 transition-transform duration-500 brightness-0 invert"
               />
             </a>
           </div>
@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ currentLang, setLang, t }) => {
 
           <div className="flex items-center gap-3">
             <div className="flex bg-white/5 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
-              {(['nl', 'en', 'fr', 'es'] as Language[]).map((l) => (
+              {(['nl', 'fr', 'en', 'es'] as Language[]).map((l) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
