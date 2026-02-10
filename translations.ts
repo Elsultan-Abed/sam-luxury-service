@@ -46,6 +46,8 @@ export const translations: Record<Language, Translations> = {
       title: "Mercedes V-Klasse",
       description: "Meer dan een voertuig, het is uw privé-executive suite onderweg. Geherconfigureerd voor absolute privacy en comfort.",
       exteriorLabel: "Premium Exterieur",
+      interior6Label: "6 Passagiers (Conference)",
+      interior7Label: "7 Passagiers (Executive)",
       interiorLabel: "Executive Cabin",
       features: [
         'High-speed Onboard Connectiviteit',
@@ -115,6 +117,8 @@ export const translations: Record<Language, Translations> = {
       title: "Mercedes V-Class",
       description: "More than a vehicle, it is your private executive suite on the move. Reconfigured for absolute privacy and comfort.",
       exteriorLabel: "Premium Exterior",
+      interior6Label: "6 Seats (Conference)",
+      interior7Label: "7 Seats (Executive)",
       interiorLabel: "Executive Cabin",
       features: [
         'High-speed Onboard Connectivity',
@@ -184,6 +188,8 @@ export const translations: Record<Language, Translations> = {
       title: "Mercedes Classe V",
       description: "Plus qu'un véhicule, c'est votre suite exécutive privée en mouvement. Reconfigurée pour une intimité et un confort absolus.",
       exteriorLabel: "Extérieur Premium",
+      interior6Label: "6 Places (Conférence)",
+      interior7Label: "7 Places (Exécutif)",
       interiorLabel: "Cabine Exécutive",
       features: [
         'Connectivité Bord Haute Vitesse',
@@ -253,6 +259,8 @@ export const translations: Record<Language, Translations> = {
       title: "Mercedes Clase V",
       description: "Más que un vehículo, es su suite ejecutiva privada en movimiento. Reconfigurada para total privacidad y confort.",
       exteriorLabel: "Exterior Premium",
+      interior6Label: "6 Plazas (Conferencia)",
+      interior7Label: "7 Plazas (Ejecutivo)",
       interiorLabel: "Cabina Ejecutiva",
       features: [
         'Conectividad a Bordo de Alta Velocidad',

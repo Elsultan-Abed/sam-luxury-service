@@ -67,7 +67,7 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
                                         <h3 className="text-white font-black text-2xl uppercase tracking-widest leading-none">{area.title}</h3>
                                     </div>
 
-                                    <ul className="space-y-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700">
+                                    <ul className="space-y-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-all duration-700">
                                         {area.items.map((item, j) => (
                                             <li key={j} className="flex items-center gap-3 text-white/60">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]/40"></div>

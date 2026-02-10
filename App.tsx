@@ -32,7 +32,8 @@ const App: React.FC = () => {
         {/* Fleet Detail Section */}
         <section id="fleet" className="py-24 lg:py-48 bg-[#0a0a0b] relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Exterior */}
               <ScrollReveal direction="left">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37]/20 to-transparent blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
@@ -51,19 +52,39 @@ const App: React.FC = () => {
                 </div>
               </ScrollReveal>
 
-              <ScrollReveal direction="right" delay={0.2}>
+              {/* Interior 6-Seat */}
+              <ScrollReveal direction="up" delay={0.1}>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37]/20 to-transparent blur-2xl opacity-20 group-hover:opacity-60 transition duration-1000"></div>
                   <div className="relative aspect-video overflow-hidden border border-white/5 glass-morphism bg-black/20">
                     <img
-                      src="/assets/mercedes-v-class-interior.png"
-                      alt="Mercedes V-Class Interior"
+                      src="/assets/mercedes-v-class-interior-6.png"
+                      alt="Mercedes V-Class Conference Layout (6 Seats)"
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 transform-gpu"
                     />
                     <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-1 rounded-full">
-                      <span className="text-[8px] font-black uppercase tracking-widest text-white/80">{t.fleet.interiorLabel}</span>
+                      <span className="text-[8px] font-black uppercase tracking-widest text-white/80">{t.fleet.interior6Label}</span>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Interior 7-Seat */}
+              <ScrollReveal direction="right" delay={0.2} className="md:col-span-2">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37]/20 to-transparent blur-2xl opacity-20 group-hover:opacity-60 transition duration-1000"></div>
+                  <div className="relative h-64 md:h-80 overflow-hidden border border-white/5 glass-morphism bg-black/20">
+                    <img
+                      src="/assets/mercedes-v-class-interior-7.png"
+                      alt="Mercedes V-Class Executive Layout (7 Seats)"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 transform-gpu"
+                    />
+                    <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-1 rounded-full">
+                      <span className="text-[8px] font-black uppercase tracking-widest text-white/80">{t.fleet.interior7Label}</span>
                     </div>
                   </div>
                 </div>

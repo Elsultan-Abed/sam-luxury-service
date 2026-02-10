@@ -45,6 +45,8 @@ export interface Translations {
     title: string;
     description: string;
     exteriorLabel: string;
+    interior6Label: string;
+    interior7Label: string;
     interiorLabel: string;
     features: string[];
   };
