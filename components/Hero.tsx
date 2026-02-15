@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
 
   // Map images to slides
   const images = [
-    '/assets/mercedes-interior-hero.png',        // Slide 1: Executive Interior
+    '/assets/mercedes-v-class-interior-7.png',   // Slide 1: Real Executive Interior (7-seat)
     '/assets/brussels-airport-branded.png',      // Slide 2: Airport
     '/assets/mercedes-v-class.png',              // Slide 3: Chauffeur/Action
     '/assets/mercedes-v-class-exterior.png'      // Slide 4: Exterior
