@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, forwardRef } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 interface HeroProps {
@@ -25,7 +25,7 @@ const images = [
   '/assets/grand-place-branded.png'            // Slide 6: Serving All Belgium (Brussels)
 ];
 
-const Hero: React.FC<HeroProps> = ({ t }) => {
+const Hero = forwardRef<HTMLElement, HeroProps>(({ t }, ref) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showSwipeHint, setShowSwipeHint] = useState(true);
 
@@ -68,7 +68,11 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] bg-black overflow-hidden group select-none">
+    <section
+      ref={ref}
+      id="hero"
+      className="relative h-screen min-h-[700px] bg-black overflow-hidden group select-none"
+    >
       <AnimatePresence mode='wait' initial={false}>
         <motion.div
           key={currentSlide}
@@ -250,6 +254,9 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
 
     </section>
   );
-};
+});
+
+// Add display name for debugging
+Hero.displayName = 'Hero';
 
 export default Hero;
