@@ -10,28 +10,39 @@ export const translations: Record<Language, Translations> = {
       contact: "Contact"
     },
     hero: {
-      ctaPhone: "Direct contact: +32 478 61 71 01",
-      ctaWhatsApp: "Bestel uw Chauffeur",
+      ctaPhone: "Bel Nu",
+      ctaWhatsApp: "Boek via WhatsApp",
+      ctaReservation: "Reserveer Rit",
       slides: [
         {
-          title: "Elite Chauffeur Service in Antwerp & Belgium",
-          subtitle: "Reis in comfort, discretie en absolute betrouwbaarheid.",
-          cta: "Reserveer uw Rit"
+          title: "Premium Chauffeur Service in Antwerpen",
+          subtitle: "Exclusieve Mercedes V-Klasse Ervaring.",
+          cta: "Meer Info"
         },
         {
-          title: "Luchthavenvervoer met Perfecte Timing",
-          subtitle: "Brussels Airport, Antwerpen, Parijs, Amsterdam.",
-          cta: "Reserveer uw Rit"
+          title: "Uw Privé Executive Transport",
+          subtitle: "Discreet. Betrouwbaar. Uitzonderlijk.",
+          cta: "Bekijk Interieur"
         },
         {
-          title: "Professionele Meertalige Chauffeurs",
-          subtitle: "Discretie, punctualiteit en executive service.",
-          cta: "Contacteer Ons"
+          title: "Luchthavenvervoer & Zakenreizen",
+          subtitle: "Naadloze verbindingen met Brussels Airport & Schiphol.",
+          cta: "Bekijk Tarieven"
         },
         {
-          title: "Mercedes-Benz V-Klasse Vloot",
-          subtitle: "Executive comfort voor maximaal 7 passagiers.",
-          cta: "Bekijk Diensten"
+          title: "Antwerpse Autoriteit",
+          subtitle: "Thuisbasis in Antwerpen, service in heel Europa.",
+          cta: "Over Ons"
+        },
+        {
+          title: "Mobiel Kantoor",
+          subtitle: "Maximale productiviteit onderweg.",
+          cta: "Onze Vloot"
+        },
+        {
+          title: "Service in Heel België",
+          subtitle: "Van Brussel tot Brugge, in stijl.",
+          cta: "Bestemmingen"
         }
       ]
     },
@@ -101,28 +112,39 @@ export const translations: Record<Language, Translations> = {
       contact: "Contact"
     },
     hero: {
-      ctaPhone: "Call Direct: +32 478 61 71 01",
-      ctaWhatsApp: "Secure Your Chauffeur",
+      ctaPhone: "Call Now",
+      ctaWhatsApp: "Book via WhatsApp",
+      ctaReservation: "Request Reservation",
       slides: [
         {
-          title: "Elite Chauffeur Service in Antwerp & Belgium",
-          subtitle: "Travel in comfort, discretion, and absolute reliability.",
-          cta: "Book your Chauffeur"
+          title: "Premium Chauffeur Service in Antwerp",
+          subtitle: "Exclusive Mercedes V-Class Experience.",
+          cta: "More Info"
         },
         {
-          title: "Airport Transfers with Perfect Timing",
-          subtitle: "Brussels Airport, Antwerp, Paris, Amsterdam.",
-          cta: "Reserve your ride"
+          title: "Your Private Executive Transport",
+          subtitle: "Discreet. Reliable. Exceptional.",
+          cta: "View Interior"
         },
         {
-          title: "Professional Multilingual Chauffeurs",
-          subtitle: "Discretion, punctuality, and executive service.",
-          cta: "Contact now"
+          title: "Airport Transfers & Business Travel",
+          subtitle: "Seamless connections to Brussels Airport & Schiphol.",
+          cta: "View Rates"
         },
         {
-          title: "Mercedes-Benz V-Class Fleet",
-          subtitle: "Executive comfort for up to 7 passengers.",
-          cta: "View services"
+          title: "Antwerp Authority",
+          subtitle: "Based in Antwerp, serving all of Europe.",
+          cta: "About Us"
+        },
+        {
+          title: "Mobile Office",
+          subtitle: "Maximum productivity on the move.",
+          cta: "Our Fleet"
+        },
+        {
+          title: "Serving All Belgium",
+          subtitle: "From Brussels to Bruges, in style.",
+          cta: "Destinations"
         }
       ]
     },
@@ -192,28 +214,39 @@ export const translations: Record<Language, Translations> = {
       contact: "Contact"
     },
     hero: {
-      ctaPhone: "Contact Direct: +32 478 61 71 01",
-      ctaWhatsApp: "Réserver Votre Chauffeur",
+      ctaPhone: "Appeler",
+      ctaWhatsApp: "Réserver par WhatsApp",
+      ctaReservation: "Demande de Réservation",
       slides: [
         {
-          title: "Service de Chauffeur d'Élite",
-          subtitle: "Voyagez dans le confort, la discrétion et une fiabilité absolue.",
-          cta: "Réserver"
+          title: "Service de Chauffeur Premium à Anvers",
+          subtitle: "Expérience exclusive en Mercedes Classe V.",
+          cta: "Plus d'infos"
         },
         {
-          title: "Transferts Aéroport avec Timing Parfait",
-          subtitle: "Bruxelles, Anvers, Paris, Amsterdam.",
-          cta: "Réserver votre trajet"
+          title: "Votre Transport Exécutif Privé",
+          subtitle: "Discret. Fiable. Exceptionnel.",
+          cta: "Voir l'intérieur"
         },
         {
-          title: "Chauffeurs Professionnels Multilingues",
-          subtitle: "Discrétion, ponctualité et service exécutif.",
-          cta: "Contactez-nous"
+          title: "Transferts Aéroport & Voyage d'Affaires",
+          subtitle: "Connexions fluides vers Bruxelles-National & Schiphol.",
+          cta: "Voir les tarifs"
         },
         {
-          title: "Flotte Mercedes-Benz Classe V",
-          subtitle: "Confort exécutif jusqu'à 7 passagers.",
-          cta: "Voir les services"
+          title: "L'Autorité Anversoise",
+          subtitle: "Basé à Anvers, desservant toute l'Europe.",
+          cta: "À propos"
+        },
+        {
+          title: "Bureau Mobile",
+          subtitle: "Productivité maximale en déplacement.",
+          cta: "Notre Flotte"
+        },
+        {
+          title: "Service dans toute la Belgique",
+          subtitle: "De Bruxelles à Bruges, avec style.",
+          cta: "Destinations"
         }
       ]
     },
@@ -283,28 +316,39 @@ export const translations: Record<Language, Translations> = {
       contact: "Contacto"
     },
     hero: {
-      ctaPhone: "Contacto Directo: +32 478 61 71 01",
-      ctaWhatsApp: "Reserve su Chófer",
+      ctaPhone: "Llamar Ahora",
+      ctaWhatsApp: "Reservar por WhatsApp",
+      ctaReservation: "Solicitar Reserva",
       slides: [
         {
-          title: "Servicio de Chófer de Élite",
-          subtitle: "Viaje con comodidad, discreción y fiabilidad absoluta.",
-          cta: "Reservar"
+          title: "Servicio de Chófer Premium en Amberes",
+          subtitle: "Experiencia exclusiva en Mercedes Clase V.",
+          cta: "Más info"
         },
         {
-          title: "Traslados al Aeropuerto con Puntualidad",
-          subtitle: "Bruselas, Amberes, París, Ámsterdam.",
-          cta: "Reserve su viaje"
+          title: "Su Transporte Ejecutivo Privado",
+          subtitle: "Discreto. Fiable. Excepcional.",
+          cta: "Ver interior"
         },
         {
-          title: "Chóferes Profesionales Multilingües",
-          subtitle: "Discreción, puntualidad y servicio ejecutivo.",
-          cta: "Contactar ahora"
+          title: "Traslados al Aeropuerto y Viajes de Negocios",
+          subtitle: "Conexiones fluidas con el Aeropuerto de Bruselas y Schiphol.",
+          cta: "Ver tarifas"
         },
         {
-          title: "Flota Mercedes-Benz Clase V",
-          subtitle: "Confort ejecutivo para hasta 7 pasajeros.",
-          cta: "Ver servicios"
+          title: "Autoridad en Amberes",
+          subtitle: "Con sede en Amberes, sirviendo a toda Europa.",
+          cta: "Sobre nosotros"
+        },
+        {
+          title: "Oficina Móvil",
+          subtitle: "Máxima productividad en movimiento.",
+          cta: "Nuestra Flota"
+        },
+        {
+          title: "Servicio en toda Bélgica",
+          subtitle: "De Bruselas a Brujas, con estilo.",
+          cta: "Destinos"
         }
       ]
     },

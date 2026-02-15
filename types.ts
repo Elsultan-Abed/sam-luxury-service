@@ -13,6 +13,7 @@ export interface Translations {
     subtitle?: string;
     ctaPhone: string;
     ctaWhatsApp: string;
+    ctaReservation: string;
     slides: {
       title: string;
       subtitle: string;
