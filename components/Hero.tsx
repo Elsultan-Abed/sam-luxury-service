@@ -76,6 +76,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={() => setIsPaused(true)}
       onTouchEnd={() => setIsPaused(false)}
+      onTouchCancel={() => setIsPaused(false)}
     >
       <AnimatePresence mode='wait' initial={false}>
         <motion.div
