@@ -1,83 +1,143 @@
 
-import React from 'react';
-import { ScrollReveal } from './ScrollReveal';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeroProps {
   t: {
-    title: string;
-    subtitle: string;
-    ctaPhone: string;
-    ctaWhatsApp: string;
+    slides: {
+      title: string;
+      subtitle: string;
+      cta: string;
+    }[];
   };
 }
 
 const Hero: React.FC<HeroProps> = ({ t }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Map images to slides
+  const images = [
+    '/assets/mercedes-interior-hero.png',        // Slide 1: Executive Interior
+    '/assets/brussels-airport-branded.png',      // Slide 2: Airport
+    '/assets/mercedes-v-class.png',              // Slide 3: Chauffeur/Action
+    '/assets/mercedes-v-class-exterior.png'      // Slide 4: Exterior
+  ];
+
+  // Auto-play logic
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, 6000); // 6 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused, images.length]);
+
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center bg-black overflow-hidden pt-32 lg:pt-24 pb-12 lg:pb-0">
-      {/* Background Lighting Elements - Optimized for mobile */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-[#D4AF37]/5 rounded-full blur-[80px] lg:blur-[120px]"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[60%] bg-white/5 rounded-full blur-[60px] lg:blur-[100px]"></div>
-      </div>
+    <section
+      className="relative h-screen min-h-[600px] bg-black overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={currentSlide}
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1.0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          {/* Background Image */}
+          <img
+            src={images[currentSlide]}
+            alt="Luxury Journey"
+            className="w-full h-full object-cover"
+          />
 
-      {/* Decorative Star pattern simulation */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
+          {/* Dark Cinematic Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        </motion.div>
+      </AnimatePresence>
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 relative z-10 w-full mb-12 sm:mb-0">
-        <div className="max-w-4xl space-y-6 lg:space-y-12">
-          <ScrollReveal delay={0.2}>
-            <div className="flex items-center gap-4">
-              <div className="h-[1px] w-12 lg:w-16 bg-[#D4AF37]"></div>
-              <span className="text-[10px] lg:text-[11px] font-extrabold uppercase tracking-[0.4em] lg:tracking-[0.6em] text-[#D4AF37]">Belgium's Elite Chauffeur</span>
-            </div>
-          </ScrollReveal>
+      {/* Content Container */}
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col justify-center">
+        <AnimatePresence mode='wait'>
+          <div key={`content-${currentSlide}`} className="max-w-3xl space-y-6">
 
-          <ScrollReveal delay={0.4}>
-            <h1 className="text-5xl lg:text-9xl font-serif-display text-white leading-[0.95] tracking-tight">
-              <span className="block italic font-light opacity-80 mb-2">Excellence in</span>
-              <span className="block font-black text-gradient-silver">Motion.</span>
-            </h1>
-          </ScrollReveal>
+            {/* Title */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="text-4xl lg:text-7xl font-serif-display text-white leading-tight drop-shadow-lg"
+            >
+              {t.slides[currentSlide].title}
+            </motion.h1>
 
-          <ScrollReveal delay={0.6}>
-            <p className="text-lg lg:text-2xl text-white/50 leading-relaxed max-w-2xl font-light italic">
-              "{t.subtitle}"
-            </p>
-          </ScrollReveal>
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              className="text-lg lg:text-2xl text-white/80 font-light italic leading-relaxed max-w-2xl drop-shadow-md"
+            >
+              {t.slides[currentSlide].subtitle}
+            </motion.p>
 
-          <ScrollReveal delay={0.8} direction="up">
-            <div className="hidden sm:flex flex-col sm:flex-row gap-6 pt-6">
-              <a
-                href="tel:+32478617101"
-                className="btn-luxury flex items-center justify-center gap-4 bg-white text-black font-extrabold py-6 px-12 text-[12px] uppercase tracking-[0.4em] shadow-2xl hover:bg-[#D4AF37] hover:text-black transition-colors"
-              >
-                <i className="fas fa-phone-alt"></i>
-                {t.ctaPhone}
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+              className="pt-4"
+            >
+              <a href="#booking" className="inline-flex items-center gap-3 bg-[#D4AF37] text-black font-extrabold py-4 px-10 text-xs uppercase tracking-[0.25em] hover:bg-white transition-all duration-300 shadow-xl rounded-sm">
+                {t.slides[currentSlide].cta}
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                >
+                  →
+                </motion.span>
               </a>
+            </motion.div>
 
-              <a
-                href="https://wa.me/32478617101"
-                className="btn-luxury flex items-center justify-center gap-4 bg-transparent text-white border border-white/20 font-extrabold py-6 px-12 text-[12px] uppercase tracking-[0.4em] backdrop-blur-sm hover:bg-white/5 transition-colors"
-              >
-                <i className="fab fa-whatsapp"></i>
-                {t.ctaWhatsApp}
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
+          </div>
+        </AnimatePresence>
       </div>
 
-      {/* Hero Badge */}
-      <div className="absolute bottom-12 right-12 hidden lg:flex items-center gap-4 px-6 py-4 border border-white/10 glass-morphism">
-        <div className="text-[#D4AF37]">
-          <i className="fas fa-award text-3xl"></i>
-        </div>
-        <div>
-          <p className="text-[10px] font-black uppercase tracking-widest text-white/80">Certified Quality</p>
-          <p className="text-[9px] font-bold text-white/40 uppercase tracking-widest">Mercedes-Benz Partner</p>
-        </div>
+      {/* Slide Indicators */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-1 transition-all duration-500 rounded-full ${index === currentSlide ? 'w-12 bg-[#D4AF37]' : 'w-4 bg-white/30 hover:bg-white/60'}`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
+
+      {/* Progress Bar for Autoplay */}
+      {!isPaused && (
+        <div className="absolute bottom-0 left-0 h-1 bg-[#D4AF37] z-20">
+          <motion.div
+            key={currentSlide}
+            className="h-full bg-[#D4AF37]"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 6, ease: "linear" }}
+            style={{ width: "100%" }}
+          />
+        </div>
+      )}
     </section>
   );
 };

@@ -9,10 +9,15 @@ export interface Translations {
     contact: string;
   };
   hero: {
-    title: string;
-    subtitle: string;
+    title?: string;
+    subtitle?: string;
     ctaPhone: string;
     ctaWhatsApp: string;
+    slides: {
+      title: string;
+      subtitle: string;
+      cta: string;
+    }[];
   };
   booking: {
     badge: string;

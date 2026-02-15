@@ -10,10 +10,30 @@ export const translations: Record<Language, Translations> = {
       contact: "Contact"
     },
     hero: {
-      title: "SAM Luxury Service: De Elite van België",
-      subtitle: "U verdient niets minder dan absolute perfectie. Onze Mercedes-Benz V-Klasse vloot staat symbool voor prestige, comfort en discretie doorheen heel België.",
       ctaPhone: "Direct contact: +32 478 61 71 01",
-      ctaWhatsApp: "Bestel uw Chauffeur"
+      ctaWhatsApp: "Bestel uw Chauffeur",
+      slides: [
+        {
+          title: "Elite Chauffeur Service in Antwerp & Belgium",
+          subtitle: "Reis in comfort, discretie en absolute betrouwbaarheid.",
+          cta: "Reserveer uw Rit"
+        },
+        {
+          title: "Luchthavenvervoer met Perfecte Timing",
+          subtitle: "Brussels Airport, Antwerpen, Parijs, Amsterdam.",
+          cta: "Reserveer uw Rit"
+        },
+        {
+          title: "Professionele Meertalige Chauffeurs",
+          subtitle: "Discretie, punctualiteit en executive service.",
+          cta: "Contacteer Ons"
+        },
+        {
+          title: "Mercedes-Benz V-Klasse Vloot",
+          subtitle: "Executive comfort voor maximaal 7 passagiers.",
+          cta: "Bekijk Diensten"
+        }
+      ]
     },
     booking: {
       badge: "Reisdetails",
@@ -81,10 +101,30 @@ export const translations: Record<Language, Translations> = {
       contact: "Contact"
     },
     hero: {
-      title: "SAM Luxury Service: Belgium's Elite Chauffeur",
-      subtitle: "Redefining the standard of premium travel. Step into our world-class Mercedes-Benz fleet for a journey beyond expectations across Belgium.",
       ctaPhone: "Call Direct: +32 478 61 71 01",
-      ctaWhatsApp: "Secure Your Chauffeur"
+      ctaWhatsApp: "Secure Your Chauffeur",
+      slides: [
+        {
+          title: "Elite Chauffeur Service in Antwerp & Belgium",
+          subtitle: "Travel in comfort, discretion, and absolute reliability.",
+          cta: "Book your Chauffeur"
+        },
+        {
+          title: "Airport Transfers with Perfect Timing",
+          subtitle: "Brussels Airport, Antwerp, Paris, Amsterdam.",
+          cta: "Reserve your ride"
+        },
+        {
+          title: "Professional Multilingual Chauffeurs",
+          subtitle: "Discretion, punctuality, and executive service.",
+          cta: "Contact now"
+        },
+        {
+          title: "Mercedes-Benz V-Class Fleet",
+          subtitle: "Executive comfort for up to 7 passengers.",
+          cta: "View services"
+        }
+      ]
     },
     booking: {
       badge: "Journey Details",
@@ -152,10 +192,30 @@ export const translations: Record<Language, Translations> = {
       contact: "Contact"
     },
     hero: {
-      title: "SAM Luxury Service: L'Élite de Belgique",
-      subtitle: "L'excellence à chaque kilomètre. Voyagez dans le confort absolu de notre flotte Mercedes-Benz à travers toute la Belgique.",
       ctaPhone: "Contact Direct: +32 478 61 71 01",
-      ctaWhatsApp: "Réserver Votre Chauffeur"
+      ctaWhatsApp: "Réserver Votre Chauffeur",
+      slides: [
+        {
+          title: "Service de Chauffeur d'Élite",
+          subtitle: "Voyagez dans le confort, la discrétion et une fiabilité absolue.",
+          cta: "Réserver"
+        },
+        {
+          title: "Transferts Aéroport avec Timing Parfait",
+          subtitle: "Bruxelles, Anvers, Paris, Amsterdam.",
+          cta: "Réserver votre trajet"
+        },
+        {
+          title: "Chauffeurs Professionnels Multilingues",
+          subtitle: "Discrétion, ponctualité et service exécutif.",
+          cta: "Contactez-nous"
+        },
+        {
+          title: "Flotte Mercedes-Benz Classe V",
+          subtitle: "Confort exécutif jusqu'à 7 passagers.",
+          cta: "Voir les services"
+        }
+      ]
     },
     booking: {
       badge: "Détails du Voyage",
@@ -223,10 +283,30 @@ export const translations: Record<Language, Translations> = {
       contact: "Contacto"
     },
     hero: {
-      title: "SAM Luxury Service: La Élite de Bélgica",
-      subtitle: "Usted merece nada menos que la perfección absoluta. Nuestra flota Mercedes-Benz Clase V ofrece prestigio y discreción en toda Bélgica.",
       ctaPhone: "Contacto Directo: +32 478 61 71 01",
-      ctaWhatsApp: "Reserve su Chófer"
+      ctaWhatsApp: "Reserve su Chófer",
+      slides: [
+        {
+          title: "Servicio de Chófer de Élite",
+          subtitle: "Viaje con comodidad, discreción y fiabilidad absoluta.",
+          cta: "Reservar"
+        },
+        {
+          title: "Traslados al Aeropuerto con Puntualidad",
+          subtitle: "Bruselas, Amberes, París, Ámsterdam.",
+          cta: "Reserve su viaje"
+        },
+        {
+          title: "Chóferes Profesionales Multilingües",
+          subtitle: "Discreción, puntualidad y servicio ejecutivo.",
+          cta: "Contactar ahora"
+        },
+        {
+          title: "Flota Mercedes-Benz Clase V",
+          subtitle: "Confort ejecutivo para hasta 7 pasajeros.",
+          cta: "Ver servicios"
+        }
+      ]
     },
     booking: {
       badge: "Detalles del Viaje",
