@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 interface HeroProps {
@@ -30,7 +30,15 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
   const [isPaused, setIsPaused] = useState(false);
   const [showSwipeHint, setShowSwipeHint] = useState(true);
 
-  // Memoized navigation functions to prevent unnecessary re-renders and effect triggers
+  // Use a ref to track paused state to avoid race conditions in interval
+  const isPausedRef = useRef(isPaused);
+
+  // Sync ref with state
+  useEffect(() => {
+    isPausedRef.current = isPaused;
+  }, [isPaused]);
+
+  // Memoized navigation functions
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % images.length);
   }, []);
@@ -51,17 +59,21 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
     }
   }, [nextSlide, prevSlide]);
 
-  // Auto-play logic
-  // Resets timer whenever currentSlide changes (to sync with progress bar) or when paused/unpaused
+  // Robust Auto-play logic
   useEffect(() => {
+    // If paused, don't set interval
     if (isPaused) return;
 
     const interval = setInterval(() => {
-      nextSlide();
+      // Double check ref inside interval just in case closures are stale (though key rebuild avoids this)
+      if (!isPausedRef.current) {
+        nextSlide();
+      }
     }, 6000); // 6 seconds
 
     return () => clearInterval(interval);
   }, [isPaused, nextSlide, currentSlide]);
+  // Dependency on currentSlide ensures timer resets on every slide change (manual or auto)
 
   // Remove swipe hint after 4 seconds
   useEffect(() => {
@@ -69,14 +81,20 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Pointer event handlers for unified mouse/touch pause logic
+  const handlePointerEnter = () => setIsPaused(true);
+  const handlePointerLeave = () => setIsPaused(false);
+  const handlePointerDown = () => setIsPaused(true);
+  const handlePointerUp = () => setIsPaused(false);
+
   return (
     <section
       className="relative h-screen min-h-[700px] bg-black overflow-hidden group select-none"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
-      onTouchCancel={() => setIsPaused(false)}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp} // Safety: Catch canceled pointers
     >
       <AnimatePresence mode='wait' initial={false}>
         <motion.div
@@ -154,13 +172,19 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
       {/* Navigation Arrows (Desktop Only) */}
       <div className="hidden lg:flex absolute inset-0 justify-between items-center px-8 pointer-events-none z-20">
         <button
-          onClick={prevSlide}
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent pausing from pointerDown on section
+            prevSlide();
+          }}
           className="pointer-events-auto bg-black/20 hover:bg-black/50 backdrop-blur-sm text-white/70 hover:text-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 border border-white/10"
         >
           <i className="fas fa-chevron-left"></i>
         </button>
         <button
-          onClick={nextSlide}
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent pausing from pointerDown on section
+            nextSlide();
+          }}
           className="pointer-events-auto bg-black/20 hover:bg-black/50 backdrop-blur-sm text-white/70 hover:text-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 border border-white/10"
         >
           <i className="fas fa-chevron-right"></i>
@@ -176,7 +200,10 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
             {images.map((_, index) => (
               <button
                 key={index}
-                onClick={() => handleDotClick(index)}
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent pause logic interference
+                  handleDotClick(index);
+                }}
                 className="flex-1 h-[2px] bg-white/20 relative overflow-hidden group/bar transition-all hover:h-[4px]"
                 aria-label={`Go to slide ${index + 1}`}
               >
@@ -188,7 +215,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
                     width: index === currentSlide ? "100%" : index < currentSlide ? "100%" : "0%"
                   }}
                   transition={
-                    index === currentSlide
+                    index === currentSlide && !isPaused
                       ? { duration: 6, ease: "linear" } // Active slide: fill over 6s
                       : { duration: 0 } // Others: instant set
                   }
