@@ -84,7 +84,7 @@ Sent from Sam Luxury Service`;
                 onChange={handleChange}
                 type="text"
                 placeholder={t.pickupPlaceholder}
-                className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light"
+                className="w-full bg-white/5 border border-white/10 rounded-sm p-5 outline-none text-white focus:border-[#D4AF37]/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all duration-300 placeholder:text-white/20 font-light"
               />
               <i className="fas fa-map-pin absolute right-5 top-1/2 -translate-y-1/2 text-white/20 text-xs"></i>
             </div>
@@ -100,7 +100,7 @@ Sent from Sam Luxury Service`;
                 onChange={handleChange}
                 type="text"
                 placeholder={t.dropoffPlaceholder}
-                className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light"
+                className="w-full bg-white/5 border border-white/10 rounded-sm p-5 outline-none text-white focus:border-[#D4AF37]/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all duration-300 placeholder:text-white/20 font-light"
               />
               <i className="fas fa-location-arrow absolute right-5 top-1/2 -translate-y-1/2 text-white/20 text-xs"></i>
             </div>
@@ -116,7 +116,7 @@ Sent from Sam Luxury Service`;
               value={formData.date}
               onChange={handleChange}
               type="date"
-              className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white font-bold uppercase text-[11px] [color-scheme:dark] focus:border-[#D4AF37]"
+              className="w-full bg-white/5 border border-white/10 rounded-sm p-5 outline-none text-white font-bold uppercase text-[11px] [color-scheme:dark] focus:border-[#D4AF37]/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all duration-300"
             />
           </div>
           <div className="space-y-3">
@@ -127,7 +127,7 @@ Sent from Sam Luxury Service`;
               value={formData.time}
               onChange={handleChange}
               type="time"
-              className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white font-bold text-[11px] [color-scheme:dark] focus:border-[#D4AF37]"
+              className="w-full bg-white/5 border border-white/10 rounded-sm p-5 outline-none text-white font-bold text-[11px] [color-scheme:dark] focus:border-[#D4AF37]/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all duration-300"
             />
           </div>
           <div className="space-y-3 relative">
@@ -137,7 +137,7 @@ Sent from Sam Luxury Service`;
                 name="passengers"
                 value={formData.passengers}
                 onChange={handleChange}
-                className="w-full bg-white/5 border border-white/10 rounded-lg p-5 outline-none text-white font-bold appearance-none text-[11px] focus:border-[#D4AF37]"
+                className="w-full bg-white/5 border border-white/10 rounded-sm p-5 outline-none text-white focus:border-[#D4AF37]/50 focus:bg-white/10 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all duration-300 placeholder:text-white/20 font-light"
               >
                 {[1, 2, 3, 4, 5, 6, 7].map(num => {
                   const label = num === 1 ? t.oneGuest : t.multiGuests;

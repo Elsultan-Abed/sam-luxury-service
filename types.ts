@@ -61,8 +61,9 @@ export interface Translations {
     title: string;
     sections: {
       airports: string;
-      cities: string;
-      crossBorder: string;
+      business: string;
+      private: string;
+      longDistance: string;
     };
   };
   footer: {

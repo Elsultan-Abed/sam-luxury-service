@@ -90,9 +90,10 @@ export const translations: Record<Language, Translations> = {
       badge: "Reikwijdte",
       title: "Doorheen België & Verder",
       sections: {
-        airports: "Luchthaven",
-        cities: "Grote Steden",
-        crossBorder: "Internationaal"
+        airports: "Luchthavenvervoer",
+        business: "Zakelijk Chauffeur",
+        private: "Privé Chauffeur",
+        longDistance: "Internationaal"
       }
     },
     footer: {
@@ -193,8 +194,9 @@ export const translations: Record<Language, Translations> = {
       title: "Across Belgium & Beyond",
       sections: {
         airports: "Airport Transfers",
-        cities: "Major Cities",
-        crossBorder: "Cross Border"
+        business: "Business Chauffeur",
+        private: "Private Chauffeur",
+        longDistance: "Long Distance"
       }
     },
     footer: {
@@ -295,8 +297,9 @@ export const translations: Record<Language, Translations> = {
       title: "Partout en Belgique et Au-delà",
       sections: {
         airports: "Transferts Aéroport",
-        cities: "Grandes Villes",
-        crossBorder: "Transfrontalier"
+        business: "Chauffeur d'Affaires",
+        private: "Chauffeur Privé",
+        longDistance: "Longue Distance"
       }
     },
     footer: {
@@ -397,8 +400,9 @@ export const translations: Record<Language, Translations> = {
       title: "En toda Bélgica y más allá",
       sections: {
         airports: "Traslados al Aeropuerto",
-        cities: "Principales Ciudades",
-        crossBorder: "Transfronterizo"
+        business: "Chófer de Negocios",
+        private: "Chófer Privado",
+        longDistance: "Larga Distancia"
       }
     },
     footer: {
