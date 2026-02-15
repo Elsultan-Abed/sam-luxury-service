@@ -8,6 +8,8 @@ import ServiceAreas from './components/ServiceAreas';
 import Footer from './components/Footer';
 import { translations } from './translations';
 import { Language } from './types';
+import TrustIndicators from './components/TrustIndicators';
+import AntwerpAuthority from './components/AntwerpAuthority';
 import { ScrollReveal } from './components/ScrollReveal';
 
 const App: React.FC = () => {
@@ -20,6 +22,9 @@ const App: React.FC = () => {
 
       <main>
         <Hero t={t.hero} />
+
+        <TrustIndicators />
+        <AntwerpAuthority />
 
         <ScrollReveal>
           <Features t={t.features} />
