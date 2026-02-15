@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 interface HeroProps {
@@ -27,16 +27,7 @@ const images = [
 
 const Hero: React.FC<HeroProps> = ({ t }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [showSwipeHint, setShowSwipeHint] = useState(true);
-
-  // Use a ref to track paused state to avoid race conditions in interval
-  const isPausedRef = useRef(isPaused);
-
-  // Sync ref with state
-  useEffect(() => {
-    isPausedRef.current = isPaused;
-  }, [isPaused]);
 
   // Memoized navigation functions
   const nextSlide = useCallback(() => {
@@ -59,21 +50,16 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
     }
   }, [nextSlide, prevSlide]);
 
-  // Robust Auto-play logic
+  // Robust Auto-play logic - ALWAYS ACTIVE
   useEffect(() => {
-    // If paused, don't set interval
-    if (isPaused) return;
-
     const interval = setInterval(() => {
-      // Double check ref inside interval just in case closures are stale (though key rebuild avoids this)
-      if (!isPausedRef.current) {
-        nextSlide();
-      }
+      nextSlide();
     }, 6000); // 6 seconds
 
     return () => clearInterval(interval);
-  }, [isPaused, nextSlide, currentSlide]);
+  }, [nextSlide, currentSlide]);
   // Dependency on currentSlide ensures timer resets on every slide change (manual or auto)
+  // This prevents immediate double-jumps if user clicks right before interval fires
 
   // Remove swipe hint after 4 seconds
   useEffect(() => {
@@ -81,21 +67,8 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Pointer event handlers for unified mouse/touch pause logic
-  const handlePointerEnter = () => setIsPaused(true);
-  const handlePointerLeave = () => setIsPaused(false);
-  const handlePointerDown = () => setIsPaused(true);
-  const handlePointerUp = () => setIsPaused(false);
-
   return (
-    <section
-      className="relative h-screen min-h-[700px] bg-black overflow-hidden group select-none"
-      onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
-      onPointerCancel={handlePointerUp} // Safety: Catch canceled pointers
-    >
+    <section className="relative h-screen min-h-[700px] bg-black overflow-hidden group select-none">
       <AnimatePresence mode='wait' initial={false}>
         <motion.div
           key={currentSlide}
@@ -173,7 +146,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
       <div className="hidden lg:flex absolute inset-0 justify-between items-center px-8 pointer-events-none z-20">
         <button
           onClick={(e) => {
-            e.stopPropagation(); // Prevent pausing from pointerDown on section
+            e.stopPropagation();
             prevSlide();
           }}
           className="pointer-events-auto bg-black/20 hover:bg-black/50 backdrop-blur-sm text-white/70 hover:text-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 border border-white/10"
@@ -182,7 +155,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
         </button>
         <button
           onClick={(e) => {
-            e.stopPropagation(); // Prevent pausing from pointerDown on section
+            e.stopPropagation();
             nextSlide();
           }}
           className="pointer-events-auto bg-black/20 hover:bg-black/50 backdrop-blur-sm text-white/70 hover:text-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 border border-white/10"
@@ -201,7 +174,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
               <button
                 key={index}
                 onClick={(e) => {
-                  e.stopPropagation(); // Prevent pause logic interference
+                  e.stopPropagation();
                   handleDotClick(index);
                 }}
                 className="flex-1 h-[2px] bg-white/20 relative overflow-hidden group/bar transition-all hover:h-[4px]"
@@ -215,7 +188,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
                     width: index === currentSlide ? "100%" : index < currentSlide ? "100%" : "0%"
                   }}
                   transition={
-                    index === currentSlide && !isPaused
+                    index === currentSlide
                       ? { duration: 6, ease: "linear" } // Active slide: fill over 6s
                       : { duration: 0 } // Others: instant set
                   }
