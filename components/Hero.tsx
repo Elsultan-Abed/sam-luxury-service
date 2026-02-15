@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 interface HeroProps {
   t: {
@@ -15,51 +15,86 @@ interface HeroProps {
   };
 }
 
+// Map images to 6 specific slides - Defined outside component for stability
+const images = [
+  '/assets/mercedes-v-class.png',              // Slide 1: Premium Chauffeur (MAS Museum)
+  '/assets/mercedes-v-class-interior-7.png',   // Slide 2: Executive Interior (7-Seat)
+  '/assets/brussels-airport-branded.png',      // Slide 3: Airport Transfer
+  '/assets/antwerp-luxury.png',                // Slide 4: Antwerp Authority (Station)
+  '/assets/mercedes-v-class-interior-6.png',   // Slide 5: Mobile Office (Conference)
+  '/assets/grand-place-branded.png'            // Slide 6: Serving All Belgium (Brussels)
+];
+
 const Hero: React.FC<HeroProps> = ({ t }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [showSwipeHint, setShowSwipeHint] = useState(true);
 
-  // Map images to 6 specific slides
-  const images = [
-    '/assets/mercedes-v-class.png',              // Slide 1: Premium Chauffeur (MAS Museum)
-    '/assets/mercedes-v-class-interior-7.png',   // Slide 2: Executive Interior (7-Seat)
-    '/assets/brussels-airport-branded.png',      // Slide 3: Airport Transfer
-    '/assets/antwerp-luxury.png',                // Slide 4: Antwerp Authority (Station)
-    '/assets/mercedes-v-class-interior-6.png',   // Slide 5: Mobile Office (Conference)
-    '/assets/grand-place-branded.png'            // Slide 6: Serving All Belgium (Brussels)
-  ];
+  // Memoized navigation functions to prevent unnecessary re-renders and effect triggers
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % images.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
+  }, []);
+
+  const handleDotClick = useCallback((index: number) => {
+    setCurrentSlide(index);
+  }, []);
+
+  const handleDragEnd = useCallback((event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    if (info.offset.x < -40) {
+      nextSlide();
+    } else if (info.offset.x > 40) {
+      prevSlide();
+    }
+  }, [nextSlide, prevSlide]);
 
   // Auto-play logic
+  // Resets timer whenever currentSlide changes (to sync with progress bar) or when paused/unpaused
   useEffect(() => {
     if (isPaused) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
+      nextSlide();
     }, 6000); // 6 seconds
 
     return () => clearInterval(interval);
-  }, [isPaused, images.length]);
+  }, [isPaused, nextSlide, currentSlide]);
+
+  // Remove swipe hint after 4 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSwipeHint(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section
-      className="relative h-screen min-h-[700px] bg-black overflow-hidden group"
+      className="relative h-screen min-h-[700px] bg-black overflow-hidden group select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
     >
-      <AnimatePresence mode='wait'>
+      <AnimatePresence mode='wait' initial={false}>
         <motion.div
           key={currentSlide}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1.0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.8, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
         >
           {/* Background Image */}
           <img
             src={images[currentSlide]}
             alt="Luxury Chauffeur Service"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover pointer-events-none"
           />
 
           {/* Premium Dark Cinematic Overlay */}
@@ -69,7 +104,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
       </AnimatePresence>
 
       {/* Main Content Container */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col justify-center pb-32 lg:pb-0">
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col justify-center pb-32 lg:pb-0 pointer-events-none">
         <AnimatePresence mode='wait'>
           <div key={`content-${currentSlide}`} className="max-w-4xl space-y-8">
 
@@ -98,13 +133,13 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
               </p>
             </motion.div>
 
-            {/* Slide-Specific Secondary CTA (Optional/Contextual) */}
+            {/* Slide-Specific Secondary CTA */}
             <motion.div
-              initial={{ opacity: 0, opacity: 0 }}
+              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="pt-6"
+              className="pt-6 pointer-events-auto"
             >
               <span className="text-white/50 text-xs uppercase tracking-[0.3em] border border-white/20 px-4 py-2 rounded-full backdrop-blur-md">
                 {t.slides[currentSlide].cta}
@@ -115,19 +150,49 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
         </AnimatePresence>
       </div>
 
+      {/* Navigation Arrows (Desktop Only) */}
+      <div className="hidden lg:flex absolute inset-0 justify-between items-center px-8 pointer-events-none z-20">
+        <button
+          onClick={prevSlide}
+          className="pointer-events-auto bg-black/20 hover:bg-black/50 backdrop-blur-sm text-white/70 hover:text-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 border border-white/10"
+        >
+          <i className="fas fa-chevron-left"></i>
+        </button>
+        <button
+          onClick={nextSlide}
+          className="pointer-events-auto bg-black/20 hover:bg-black/50 backdrop-blur-sm text-white/70 hover:text-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 border border-white/10"
+        >
+          <i className="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
       {/* ALWAYS VISIBLE PRIMARY CTA BAR - Positioned at bottom */}
       <div className="absolute bottom-0 left-0 w-full z-30 bg-gradient-to-t from-black via-black/80 to-transparent pt-20 pb-8 lg:pb-12 px-8">
         <div className="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
 
-          {/* Slide Indicators - Integrated into bottom bar */}
-          <div className="flex gap-3 order-2 lg:order-1">
+          {/* New Animated Progress Bars */}
+          <div className="flex gap-2 w-full lg:w-1/3 order-2 lg:order-1">
             {images.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`h-1 transition-all duration-500 rounded-full ${index === currentSlide ? 'w-12 bg-[#D4AF37]' : 'w-4 bg-white/20 hover:bg-white/50'}`}
+                onClick={() => handleDotClick(index)}
+                className="flex-1 h-[2px] bg-white/20 relative overflow-hidden group/bar transition-all hover:h-[4px]"
                 aria-label={`Go to slide ${index + 1}`}
-              />
+              >
+                {/* Fill Animation */}
+                <motion.div
+                  className="absolute inset-0 bg-[#D4AF37]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: index === currentSlide ? "100%" : index < currentSlide ? "100%" : "0%"
+                  }}
+                  transition={
+                    index === currentSlide
+                      ? { duration: 6, ease: "linear" } // Active slide: fill over 6s
+                      : { duration: 0 } // Others: instant set
+                  }
+                />
+              </button>
             ))}
           </div>
 
@@ -163,19 +228,25 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
         </div>
       </div>
 
-      {/* Autoplay Progress Line (Subtle at very bottom) */}
-      {!isPaused && (
-        <div className="absolute bottom-0 left-0 h-[2px] bg-[#D4AF37] z-40">
+      {/* Mobile Swipe Hint */}
+      <AnimatePresence>
+        {showSwipeHint && (
           <motion.div
-            key={currentSlide}
-            className="h-full bg-[#D4AF37]"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 6, ease: "linear" }}
-            style={{ width: "100%" }}
-          />
-        </div>
-      )}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.6 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute bottom-32 left-0 w-full text-center pointer-events-none lg:hidden z-20"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10">
+              <i className="fas fa-arrow-left text-[10px] text-white/50 animate-pulse"></i>
+              <span className="text-[10px] uppercase tracking-widest text-white/80">Swipe to explore</span>
+              <i className="fas fa-arrow-right text-[10px] text-white/50 animate-pulse"></i>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 };
