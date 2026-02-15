@@ -19,19 +19,19 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
         {
             title: t.sections.airports,
             items: ['Zaventem (BRU)', 'Charleroi (CRL)', 'Brussels Airport', 'Antwerp Airport'],
-            image: '/assets/brussels-luxury.png',
+            image: '/assets/brussels-airport-branded.png',
             label: 'Brussels Airport (BRU)'
         },
         {
             title: t.sections.cities,
             items: ['Antwerp', 'Brussels', 'Ghent', 'Bruges', 'Liège', 'Namur'],
-            image: '/assets/antwerp-luxury.png',
+            image: '/assets/grand-place-branded.png',
             label: 'Brussels Grand Place'
         },
         {
             title: t.sections.crossBorder,
             items: ['Paris (CDG)', 'Amsterdam (Schiphol)', 'Düsseldorf Airport'],
-            image: '/assets/ghent-luxury.png',
+            image: '/assets/ghent-branded.png',
             label: 'Historic Ghent'
         }
     ];
