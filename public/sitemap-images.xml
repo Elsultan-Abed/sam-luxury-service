@@ -16,9 +16,19 @@
       <image:caption>Interieur van de Mercedes V-Klasse voor 7 passagiers in executive configuratie</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://www.samluxuryservice.be/assets/service-interior-vertical.jpg</image:loc>
+      <image:title>Mercedes V-Klasse interieur — Vertical Setup</image:title>
+      <image:caption>Verticale weergave van de Mercedes V-Klasse interieur voor zakelijke service</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://www.samluxuryservice.be/assets/mercedes-v-class-interior-6.jpg</image:loc>
       <image:title>Mercedes V-Klasse interieur 6 passagiers — Conference Setup</image:title>
       <image:caption>Interieur van de Mercedes V-Klasse in vergaderconfiguratie voor zakelijk gebruik</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.samluxuryservice.be/assets/service-exterior-vertical.jpg</image:loc>
+      <image:title>Mercedes V-Klasse exterieur — Vertical View</image:title>
+      <image:caption>Verticale weergave van de Mercedes V-Klasse exterieur voor chauffeursdienst</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.samluxuryservice.be/assets/mercedes-v-class-exterior.jpg</image:loc>
@@ -26,9 +36,19 @@
       <image:caption>Buitenaanzicht van de Mercedes-Benz V-Klasse in gebruik bij SAM Luxury Service</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://www.samluxuryservice.be/assets/brussels-airport-vertical.jpg</image:loc>
+      <image:title>Brussels Airport Transfer — Vertical Column</image:title>
+      <image:caption>Verticale weergave van Brussel Airport transfer service</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://www.samluxuryservice.be/assets/brussels-airport-branded.jpg</image:loc>
       <image:title>Brussels Airport Transfer — SAM Luxury Service</image:title>
       <image:caption>Luxe luchthaventransfer naar Brussels Airport Zaventem vanuit Antwerpen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.samluxuryservice.be/assets/antwerp-location-vertical.jpg</image:loc>
+      <image:title>Antwerpen Centraal — Vertical Portrait</image:title>
+      <image:caption>Verticale weergave van Antwerpen Centraal Station</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.samluxuryservice.be/assets/antwerp-luxury.jpg</image:loc>

@@ -12,25 +12,25 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
         {
             title: t.sections.airports,
             items: ['Zaventem (BRU)', 'Charleroi (CRL)', 'Paris (CDG)', 'Schiphol (AMS)'],
-            image: '/assets/brussels-airport-branded.jpg',
+            image: '/assets/brussels-airport-vertical.jpg',
             label: 'Global Connections'
         },
         {
             title: t.sections.business,
             items: ['Corporate Events', 'Roadshows', 'Financial District', 'Diplomatic'],
-            image: '/assets/mercedes-v-class-interior-6.jpg',
+            image: '/assets/service-interior-vertical.jpg',
             label: 'Executive Travel'
         },
         {
             title: t.sections.private,
             items: ['Fine Dining', 'Luxury Shopping', 'Private Events', 'Weddings'],
-            image: '/assets/antwerp-luxury.jpg', // Changed from grand-place for variety
+            image: '/assets/antwerp-location-vertical.jpg', // Changed from grand-place for variety
             label: 'Lifestyle Management'
         },
         {
             title: t.sections.longDistance,
             items: ['Antwerp', 'Paris', 'Amsterdam', 'Luxembourg'],
-            image: '/assets/mercedes-v-class-exterior.jpg',
+            image: '/assets/service-exterior-vertical.jpg',
             label: 'European Reach'
         }
     ];
@@ -65,6 +65,8 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
                                         className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000 transform-gpu"
                                         loading="lazy"
                                         decoding="async"
+                                        width="720"
+                                        height="1080"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity duration-700"></div>
                                 </div>

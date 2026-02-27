@@ -69,8 +69,8 @@ const VehicleShowcase: React.FC<VehicleShowcaseProps> = ({ t }) => {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`w-full text-left p-6 border-l-2 transition-all duration-500 group ${activeTab === tab
-                                        ? 'border-[#D4AF37] bg-white/5'
-                                        : 'border-white/10 hover:border-white/30 hover:bg-white/5'
+                                    ? 'border-[#D4AF37] bg-white/5'
+                                    : 'border-white/10 hover:border-white/30 hover:bg-white/5'
                                     }`}
                             >
                                 <span className={`text-xs font-bold uppercase tracking-widest block mb-2 ${activeTab === tab ? 'text-[#D4AF37]' : 'text-white/40 group-hover:text-white/60'}`}>
@@ -108,6 +108,8 @@ const VehicleShowcase: React.FC<VehicleShowcaseProps> = ({ t }) => {
                                     src={content[activeTab].image}
                                     alt={content[activeTab].label}
                                     className="w-full h-full object-cover"
+                                    width="1200"
+                                    height="800"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                                 <div className="absolute bottom-8 left-8">
