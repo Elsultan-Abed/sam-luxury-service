@@ -24,7 +24,7 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
         {
             title: t.sections.private,
             items: ['Fine Dining', 'Luxury Shopping', 'Private Events', 'Weddings'],
-            image: '/assets/antwerp-luxury.png', // Changed from grand-place for variety
+            image: '/assets/antwerp-luxury.jpg', // Changed from grand-place for variety
             label: 'Lifestyle Management'
         },
         {

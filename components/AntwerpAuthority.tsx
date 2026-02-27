@@ -120,7 +120,7 @@ const AntwerpAuthority: React.FC<AntwerpAuthorityProps> = ({ lang = 'nl' }) => {
                 >
                     <div className="relative aspect-square md:aspect-[4/3] rounded-sm overflow-hidden border border-white/10 glass-morphism p-2">
                         <img
-                            src="/assets/antwerp-luxury.png"
+                            src="/assets/antwerp-luxury.jpg"
                             alt="Antwerp Central Station — SAM Luxury Service base in Antwerp, Belgium"
                             className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700"
                             loading="lazy"

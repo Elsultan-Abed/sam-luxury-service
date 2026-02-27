@@ -21,7 +21,7 @@ const images = [
   '/assets/mercedes-v-class.jpg',              // Slide 1: Premium Chauffeur (MAS Museum)
   '/assets/mercedes-v-class-interior-7.jpg',   // Slide 2: Executive Interior (7-Seat)
   '/assets/brussels-airport-branded.jpg',      // Slide 3: Airport Transfer
-  '/assets/antwerp-luxury.png',                // Slide 4: Antwerp Authority (Station)
+  '/assets/antwerp-luxury.jpg',                // Slide 4: Antwerp Authority (Station)
   '/assets/mercedes-v-class-interior-6.jpg',   // Slide 5: Mobile Office (Conference)
   '/assets/grand-place-branded.jpg'            // Slide 6: Serving All Belgium (Brussels)
 ];
