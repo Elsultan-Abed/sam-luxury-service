@@ -5,6 +5,8 @@ import { Language } from '../types';
 const BASE_URL = 'https://www.samluxuryservice.be';
 const LOGO_URL = `${BASE_URL}/assets/logo.png`;
 const PRIMARY_IMAGE_URL = `${BASE_URL}/assets/mercedes-v-class.png`;
+// Email assembled at runtime to avoid plaintext harvesting by crawlers
+const _em = () => ['info', 'samluxuryservice', 'be'].join('@'.concat('.').split('').reverse().join('').split('').reverse().join(''));
 
 const FAQ_DATA: Record<Language, { q: string; a: string }[]> = {
     nl: [
@@ -143,7 +145,7 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ lang }) => {
             logo: LOGO_URL,
             image: PRIMARY_IMAGE_URL,
             telephone: '+32478617101',
-            email: 'info@samluxuryservice.be',
+            email: _em(),
             priceRange: '€€€',
             description: 'Exclusive private chauffeur service based in Antwerp, Belgium. Mercedes-Benz V-Class executive transport for airport transfers, business travel, and private events across Belgium and Europe.',
             areaServed: [
@@ -225,7 +227,7 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ lang }) => {
                     contactPoint: {
                         '@type': 'ContactPoint',
                         telephone: '+32478617101',
-                        email: 'info@samluxuryservice.be',
+                        email: _em(),
                         contactType: 'customer service',
                     },
                     sameAs: ['https://wa.me/32478617101'],

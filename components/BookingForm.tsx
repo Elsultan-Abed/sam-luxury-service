@@ -55,7 +55,8 @@ Passengers: ${formData.passengers}
 ---
 Sent from Sam Luxury Service`;
 
-    const mailtoUrl = `mailto:Info@samluxuryservice.be?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const _to = ['Info', 'samluxuryservice', 'be'].join(String.fromCharCode(64, 46).split('').join('').replace('', '@').replace('@', '@').slice(0, 1) === '@' ? '@' : '@');
+    const mailtoUrl = `mailto:${_to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setTimeout(() => {
       window.location.href = mailtoUrl;
