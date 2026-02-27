@@ -1,0 +1,7 @@
+# ads.txt — SAM Luxury Service
+# This file is required by programmatic advertising networks.
+# If you are not using Google AdSense or other ad networks,
+# this file signals there are no authorized sellers for this domain.
+# It prevents unauthorized ad impressions from appearing on your site.
+
+# placeholder.example.com, placeholder, DIRECT, placeholder

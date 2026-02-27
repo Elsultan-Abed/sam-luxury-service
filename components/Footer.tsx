@@ -97,12 +97,13 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
                 <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/20">
                   {t.officialInquiries}
                 </span>
+                {/* Email obfuscated to prevent spam harvesting */}
                 <a
-                  href="mailto:info@samluxuryservice.be"
+                  href={`mailto:${'info'}@${'samluxuryservice'}.be`}
                   className="text-sm font-light text-white/60 hover:text-white transition-colors"
                   aria-label="Email SAM Luxury Service"
                 >
-                  info@samluxuryservice.be
+                  {'info'}&#64;{'samluxuryservice'}.be
                 </a>
               </div>
               {/* WhatsApp */}

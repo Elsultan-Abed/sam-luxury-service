@@ -1,63 +1,100 @@
 # SAM Luxury Service — Apache .htaccess
-# Hostinger / Apache SPA routing + static file serving
+# Full SEO + Security configuration for Hostinger/Apache
 
 Options -MultiViews
 RewriteEngine On
 
-# Force HTTPS
+# -----------------------------------------------
+# 1. Force HTTPS
+# -----------------------------------------------
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Force www (remove if you prefer non-www)
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# -----------------------------------------------
+# 2. Force WWW (canonical www — fixes URL Canonicalization test)
+# -----------------------------------------------
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # -----------------------------------------------
-# CRITICAL: Serve static files BEFORE SPA fallback
-# This ensures sitemap.xml, robots.txt, images etc.
-# are served directly and NOT rewritten to index.html
+# 3. Serve static files DIRECTLY (fixes sitemap.xml, robots.txt, ads.txt)
+# This MUST come before the SPA catch-all
 # -----------------------------------------------
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# SPA fallback: all other routes → index.html
+# -----------------------------------------------
+# 4. SPA fallback: all other routes → index.html
+# -----------------------------------------------
 RewriteRule ^ index.html [L]
 
 # -----------------------------------------------
-# Correct MIME types for sitemap and robots
+# 5. Custom error pages (fixes Custom 404 Error Page test)
+# -----------------------------------------------
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 500 /404.html
+
+# -----------------------------------------------
+# 5. Correct MIME types
 # -----------------------------------------------
 AddType application/xml .xml
 AddType text/plain .txt
+AddType text/plain .ads
 AddType image/webp .webp
 AddType image/avif .avif
 
 # -----------------------------------------------
-# Security headers
+# 6. Security headers (HSTS + others)
 # -----------------------------------------------
 <IfModule mod_headers.c>
+    # HSTS: Force HTTPS for 1 year (fixes HSTS test)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
 # -----------------------------------------------
-# Caching: static assets (images, fonts, css, js)
+# 7. Browser caching (reduces load time + CDN-equivalent caching)
 # -----------------------------------------------
 <IfModule mod_expires.c>
     ExpiresActive On
+    # Images: 1 year
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    # CSS + JS: 1 month (Vite hashes filenames anyway)
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    # Fonts: 1 year
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    # XML / txt: refresh daily
     ExpiresByType application/xml "access plus 1 day"
     ExpiresByType text/plain "access plus 1 day"
+    # HTML: no cache (always fresh)
+    ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
-# Block access to sensitive files
-<FilesMatch "^\.env|\.env\.local|package\.json|package-lock\.json|tsconfig\.json">
+# -----------------------------------------------
+# 8. Compression (gzip — reduces transfer size dramatically)
+# -----------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json application/xml text/xml
+    AddOutputFilterByType DEFLATE font/woff2 font/woff image/svg+xml
+</IfModule>
+
+# -----------------------------------------------
+# 9. Block access to sensitive files
+# -----------------------------------------------
+<FilesMatch "^\.env|\.env\.local|package\.json|package-lock\.json|tsconfig\.json|vite\.config">
     Order Allow,Deny
     Deny from all
 </FilesMatch>

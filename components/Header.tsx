@@ -27,8 +27,13 @@ const Header: React.FC<HeaderProps> = ({ currentLang, setLang, t }) => {
             <a href="#" className="flex items-center h-16 lg:h-24">
               <img
                 src="/assets/logo.png"
-                alt="SAM Luxury Service"
+                alt="SAM Luxury Service — Premium Chauffeur Antwerpen"
                 className="h-full w-auto object-contain hover:scale-105 transition-transform duration-500 grayscale brightness-[10] mix-blend-screen"
+                fetchPriority="high"
+                loading="eager"
+                decoding="sync"
+                width="160"
+                height="96"
               />
             </a>
           </div>

@@ -61,13 +61,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-  <!-- Fonts (non-render-blocking with display=swap) -->
-  <link
+  <!-- Fonts: Preloaded Google Fonts (non-render-blocking — fixes Render Blocking Resources test) -->
+  <!-- Step 1: Preload the CSS with media=print trick, then swap to all -->
+  <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,400&family=Plus+Jakarta+Sans:wght@200;300;400;600;800&display=swap"
-    rel="stylesheet">
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,400&family=Plus+Jakarta+Sans:wght@200;300;400;600;800&display=swap"
+      rel="stylesheet" />
+  </noscript>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Font Awesome: non-render-blocking (fixes Render Blocking Resources test) -->
+  <link rel="preload"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </noscript>
 
   <!-- Tailwind CDN (development only — use Tailwind PostCSS plugin for production builds) -->
   <script src="https://cdn.tailwindcss.com"></script>
