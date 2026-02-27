@@ -12,17 +12,17 @@ const VehicleShowcase: React.FC<VehicleShowcaseProps> = ({ t }) => {
 
     const content = {
         exterior: {
-            image: '/assets/mercedes-v-class-exterior.png',
+            image: '/assets/mercedes-v-class-exterior.jpg',
             label: t.exteriorLabel,
             desc: "Discreet black metallic finish with privacy glass."
         },
         interior7: {
-            image: '/assets/mercedes-v-class-interior-7.png',
+            image: '/assets/mercedes-v-class-interior-7.jpg',
             label: t.interior7Label,
             desc: "Face-to-face executive seating for productive meetings."
         },
         interior6: {
-            image: '/assets/mercedes-v-class-interior-6.png',
+            image: '/assets/mercedes-v-class-interior-6.jpg',
             label: t.interior6Label,
             desc: "Maximum legroom conference setup for VIP travel."
         }

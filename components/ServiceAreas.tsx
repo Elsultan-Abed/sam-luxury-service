@@ -12,13 +12,13 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
         {
             title: t.sections.airports,
             items: ['Zaventem (BRU)', 'Charleroi (CRL)', 'Paris (CDG)', 'Schiphol (AMS)'],
-            image: '/assets/brussels-airport-branded.png',
+            image: '/assets/brussels-airport-branded.jpg',
             label: 'Global Connections'
         },
         {
             title: t.sections.business,
             items: ['Corporate Events', 'Roadshows', 'Financial District', 'Diplomatic'],
-            image: '/assets/mercedes-v-class-interior-6.png',
+            image: '/assets/mercedes-v-class-interior-6.jpg',
             label: 'Executive Travel'
         },
         {
@@ -30,7 +30,7 @@ const ServiceAreas: React.FC<ServiceAreasProps> = ({ t }) => {
         {
             title: t.sections.longDistance,
             items: ['Antwerp', 'Paris', 'Amsterdam', 'Luxembourg'],
-            image: '/assets/mercedes-v-class-exterior.png',
+            image: '/assets/mercedes-v-class-exterior.jpg',
             label: 'European Reach'
         }
     ];

@@ -18,12 +18,12 @@ interface HeroProps {
 
 // Map images to 6 specific slides - Defined outside component for stability
 const images = [
-  '/assets/mercedes-v-class.png',              // Slide 1: Premium Chauffeur (MAS Museum)
-  '/assets/mercedes-v-class-interior-7.png',   // Slide 2: Executive Interior (7-Seat)
-  '/assets/brussels-airport-branded.png',      // Slide 3: Airport Transfer
+  '/assets/mercedes-v-class.jpg',              // Slide 1: Premium Chauffeur (MAS Museum)
+  '/assets/mercedes-v-class-interior-7.jpg',   // Slide 2: Executive Interior (7-Seat)
+  '/assets/brussels-airport-branded.jpg',      // Slide 3: Airport Transfer
   '/assets/antwerp-luxury.png',                // Slide 4: Antwerp Authority (Station)
-  '/assets/mercedes-v-class-interior-6.png',   // Slide 5: Mobile Office (Conference)
-  '/assets/grand-place-branded.png'            // Slide 6: Serving All Belgium (Brussels)
+  '/assets/mercedes-v-class-interior-6.jpg',   // Slide 5: Mobile Office (Conference)
+  '/assets/grand-place-branded.jpg'            // Slide 6: Serving All Belgium (Brussels)
 ];
 
 const Hero = forwardRef<HTMLElement, HeroProps>(({ t, lang = 'nl' }, ref) => {

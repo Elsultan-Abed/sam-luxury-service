@@ -4,7 +4,7 @@ import { Language } from '../types';
 
 const BASE_URL = 'https://www.samluxuryservice.be';
 const LOGO_URL = `${BASE_URL}/assets/logo.png`;
-const PRIMARY_IMAGE_URL = `${BASE_URL}/assets/mercedes-v-class.png`;
+const PRIMARY_IMAGE_URL = `${BASE_URL}/assets/mercedes-v-class.jpg`;
 // Email assembled at runtime to avoid plaintext harvesting by crawlers
 const _em = () => ['info', 'samluxuryservice', 'be'].join('@'.concat('.').split('').reverse().join('').split('').reverse().join(''));
 
