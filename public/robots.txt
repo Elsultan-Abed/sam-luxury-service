@@ -1,0 +1,29 @@
+# robots.txt — SAM Luxury Service
+# https://www.samluxuryservice.be
+
+User-agent: *
+Allow: /
+Allow: /nl/
+Allow: /fr/
+Allow: /en/
+Allow: /es/
+Allow: /assets/
+Allow: /sitemap.xml
+Allow: /sitemap-images.xml
+
+# Block private/system paths
+Disallow: /admin
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /.env.local
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json$
+
+# Crawl delay (optional, be reasonable)
+Crawl-delay: 1
+
+# Sitemap reference
+Sitemap: https://www.samluxuryservice.be/sitemap.xml
+Sitemap: https://www.samluxuryservice.be/sitemap-images.xml

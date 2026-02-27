@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Dutch (Flemish) — Default / Primary -->
+  <url>
+    <loc>https://www.samluxuryservice.be/nl/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://www.samluxuryservice.be/nl/" />
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://www.samluxuryservice.be/fr/" />
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.samluxuryservice.be/en/" />
+    <xhtml:link rel="alternate" hreflang="es"    href="https://www.samluxuryservice.be/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.samluxuryservice.be/nl/" />
+    <image:image>
+      <image:loc>https://www.samluxuryservice.be/assets/mercedes-v-class.png</image:loc>
+      <image:title>SAM Luxury Service — Mercedes V-Klasse Antwerpen</image:title>
+      <image:caption>Premium chauffeursdienst in Antwerpen met Mercedes V-Klasse</image:caption>
+    </image:image>
+  </url>
+
+  <!-- French / Français -->
+  <url>
+    <loc>https://www.samluxuryservice.be/fr/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://www.samluxuryservice.be/nl/" />
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://www.samluxuryservice.be/fr/" />
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.samluxuryservice.be/en/" />
+    <xhtml:link rel="alternate" hreflang="es"    href="https://www.samluxuryservice.be/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.samluxuryservice.be/nl/" />
+    <image:image>
+      <image:loc>https://www.samluxuryservice.be/assets/mercedes-v-class.png</image:loc>
+      <image:title>SAM Luxury Service — Mercedes Classe V Anvers</image:title>
+      <image:caption>Service de chauffeur premium à Anvers avec Mercedes Classe V</image:caption>
+    </image:image>
+  </url>
+
+  <!-- English -->
+  <url>
+    <loc>https://www.samluxuryservice.be/en/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://www.samluxuryservice.be/nl/" />
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://www.samluxuryservice.be/fr/" />
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.samluxuryservice.be/en/" />
+    <xhtml:link rel="alternate" hreflang="es"    href="https://www.samluxuryservice.be/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.samluxuryservice.be/nl/" />
+    <image:image>
+      <image:loc>https://www.samluxuryservice.be/assets/mercedes-v-class.png</image:loc>
+      <image:title>SAM Luxury Service — Mercedes V-Class Antwerp</image:title>
+      <image:caption>Premium chauffeur service in Antwerp with Mercedes V-Class</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Spanish / Español -->
+  <url>
+    <loc>https://www.samluxuryservice.be/es/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://www.samluxuryservice.be/nl/" />
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://www.samluxuryservice.be/fr/" />
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.samluxuryservice.be/en/" />
+    <xhtml:link rel="alternate" hreflang="es"    href="https://www.samluxuryservice.be/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.samluxuryservice.be/nl/" />
+  </url>
+
+</urlset>

@@ -13,6 +13,7 @@ interface HeroProps {
       cta: string;
     }[];
   };
+  lang?: string;
 }
 
 // Map images to 6 specific slides - Defined outside component for stability
@@ -25,7 +26,7 @@ const images = [
   '/assets/grand-place-branded.png'            // Slide 6: Serving All Belgium (Brussels)
 ];
 
-const Hero = forwardRef<HTMLElement, HeroProps>(({ t }, ref) => {
+const Hero = forwardRef<HTMLElement, HeroProps>(({ t, lang = 'nl' }, ref) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showSwipeHint, setShowSwipeHint] = useState(true);
 
@@ -71,6 +72,7 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ t }, ref) => {
     <section
       ref={ref}
       id="hero"
+      aria-label="Hero — SAM Luxury Service Antwerp Chauffeur"
       className="relative h-screen min-h-[700px] bg-black overflow-hidden group select-none"
     >
       <AnimatePresence mode='wait' initial={false}>
@@ -89,8 +91,11 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ t }, ref) => {
           {/* Background Image */}
           <img
             src={images[currentSlide]}
-            alt="Luxury Chauffeur Service"
+            alt={t.slides[currentSlide].title + ' — SAM Luxury Service Antwerp'}
             className="w-full h-full object-cover pointer-events-none"
+            fetchPriority={currentSlide === 0 ? 'high' : 'auto'}
+            loading={currentSlide === 0 ? 'eager' : 'lazy'}
+            decoding="async"
           />
 
           {/* Premium Dark Cinematic Overlay */}
