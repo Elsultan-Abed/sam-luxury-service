@@ -1,0 +1,63 @@
+# SAM Luxury Service — Apache .htaccess
+# Hostinger / Apache SPA routing + static file serving
+
+Options -MultiViews
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force www (remove if you prefer non-www)
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# -----------------------------------------------
+# CRITICAL: Serve static files BEFORE SPA fallback
+# This ensures sitemap.xml, robots.txt, images etc.
+# are served directly and NOT rewritten to index.html
+# -----------------------------------------------
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback: all other routes → index.html
+RewriteRule ^ index.html [L]
+
+# -----------------------------------------------
+# Correct MIME types for sitemap and robots
+# -----------------------------------------------
+AddType application/xml .xml
+AddType text/plain .txt
+AddType image/webp .webp
+AddType image/avif .avif
+
+# -----------------------------------------------
+# Security headers
+# -----------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# -----------------------------------------------
+# Caching: static assets (images, fonts, css, js)
+# -----------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/xml "access plus 1 day"
+    ExpiresByType text/plain "access plus 1 day"
+</IfModule>
+
+# Block access to sensitive files
+<FilesMatch "^\.env|\.env\.local|package\.json|package-lock\.json|tsconfig\.json">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
