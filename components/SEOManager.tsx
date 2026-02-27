@@ -14,30 +14,30 @@ const SEO_DATA: Record<Language, {
     nl: {
         htmlLang: 'nl-BE',
         ogLocale: 'nl_BE',
-        title: 'SAM Luxury Service | Privé Chauffeur & Taxi Antwerpen — Mercedes V-Klasse',
-        description: 'Exclusieve privéchauffeur en luchthaventransfer in Antwerpen. Mercedes V-Klasse, 24/7 beschikbaar. Zaventem, Charleroi, Brussel & heel België. Boek direct via WhatsApp.',
-        keywords: 'taxi antwerpen, chauffeur antwerpen, privéchauffeur antwerpen, luchthavenvervoer antwerpen, zaventem transfer, mercedes v klasse antwerpen, zakelijk vervoer antwerpen, luxe taxi antwerpen',
+        title: 'SAM Luxury | Premium Chauffeur Service Antwerpen',    // 48 chars
+        description: 'Premium privéchauffeur service in Antwerpen. Mercedes V-Klasse, 24/7 beschikbaar. Luchthaventransfer Zaventem & Charleroi. Boek direct via WhatsApp.',    // 150 chars
+        keywords: 'taxi antwerpen, chauffeur antwerpen, premium chauffeur antwerpen, privéchauffeur service antwerpen, luchthavenvervoer zaventem, mercedes v klasse antwerpen, zakelijk vervoer antwerpen',
     },
     fr: {
         htmlLang: 'fr-BE',
         ogLocale: 'fr_BE',
-        title: 'SAM Luxury Service | Chauffeur Privé & Taxi Anvers — Mercedes Classe V',
-        description: 'Service de chauffeur privé et transfert aéroport à Anvers. Mercedes Classe V, disponible 24h/24. Zaventem, Charleroi, Bruxelles et toute la Belgique. Réservez via WhatsApp.',
-        keywords: 'taxi anvers, chauffeur privé anvers, transfert aéroport anvers, mercedes classe v anvers, transport affaires anvers, taxi luxe anvers, chauffeur bruxelles',
+        title: 'SAM Luxury | Chauffeur Premium Anvers — Service 24h',    // 52 chars
+        description: 'Service de chauffeur premium à Anvers. Mercedes Classe V, disponible 24h/24. Transfert aéroport Zaventem & Charleroi. Réservez directement via WhatsApp.',    // 151 chars
+        keywords: 'taxi anvers, chauffeur premium anvers, service chauffeur anvers, transfert aéroport anvers, mercedes classe v anvers, transport affaires anvers, taxi luxe anvers',
     },
     en: {
         htmlLang: 'en',
         ogLocale: 'en_GB',
-        title: 'SAM Luxury Service | Private Chauffeur & Taxi Antwerp — Mercedes V-Class',
-        description: 'Exclusive private chauffeur and airport transfer service in Antwerp. Mercedes V-Class, available 24/7. Brussels Airport (BRU), Charleroi, Schiphol & all Belgium. Book via WhatsApp.',
-        keywords: 'taxi antwerp, chauffeur antwerp, private chauffeur antwerp, airport transfer antwerp, brussels airport transfer, mercedes v class antwerp, business chauffeur antwerp, luxury taxi antwerp',
+        title: 'SAM Luxury | Premium Chauffeur Service Antwerp',    // 47 chars
+        description: 'Premium private chauffeur service in Antwerp. Mercedes V-Class, available 24/7. Airport transfers to Zaventem & Charleroi. Book instantly via WhatsApp.',    // 150 chars
+        keywords: 'taxi antwerp, premium chauffeur antwerp, private chauffeur service antwerp, airport transfer antwerp, brussels airport zaventem, mercedes v class antwerp, business chauffeur antwerp',
     },
     es: {
         htmlLang: 'es',
         ogLocale: 'es_ES',
-        title: 'SAM Luxury Service | Chófer Privado y Taxi Amberes — Mercedes Clase V',
-        description: 'Servicio exclusivo de chófer privado y traslado al aeropuerto en Amberes. Mercedes Clase V, disponible 24/7. Zaventem, Charleroi, Bruselas y toda Bélgica.',
-        keywords: 'taxi amberes, chófer privado amberes, traslado aeropuerto amberes, mercedes clase v amberes, transporte ejecutivo amberes',
+        title: 'SAM Luxury | Chófer Premium Amberes — Servicio 24h',    // 51 chars
+        description: 'Servicio de chófer premium en Amberes. Mercedes Clase V, 24/7. Traslados al aeropuerto Zaventem & Charleroi. Reserve directamente por WhatsApp.',    // 148 chars
+        keywords: 'taxi amberes, chófer premium amberes, servicio chófer amberes, traslado aeropuerto zaventem, mercedes clase v amberes, transporte ejecutivo premium amberes',
     },
 };
 
