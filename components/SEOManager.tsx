@@ -14,29 +14,33 @@ const SEO_DATA: Record<Language, {
     nl: {
         htmlLang: 'nl-BE',
         ogLocale: 'nl_BE',
-        title: 'SAM Luxury | Premium Chauffeur Service Antwerpen',    // 48 chars
-        description: 'Premium privéchauffeur service in Antwerpen. Mercedes V-Klasse, 24/7 beschikbaar. Luchthaventransfer Zaventem & Charleroi. Boek direct via WhatsApp.',    // 150 chars
+        title: 'SAM Luxury | Premium Chauffeur Service Antwerpen',
+        // NL — 235 chars
+        description: 'Premium privéchauffeur service in Antwerpen & heel België. Mercedes V-Klasse, 24/7 beschikbaar voor zakelijk en privévervoer. Luchthaventransfer Zaventem, Charleroi & Brussel. Discreet, punctueel & luxueus. Boek direct via WhatsApp.',
         keywords: 'taxi antwerpen, chauffeur antwerpen, premium chauffeur antwerpen, privéchauffeur service antwerpen, luchthavenvervoer zaventem, mercedes v klasse antwerpen, zakelijk vervoer antwerpen',
     },
     fr: {
         htmlLang: 'fr-BE',
         ogLocale: 'fr_BE',
-        title: 'SAM Luxury | Chauffeur Premium Anvers — Service 24h',    // 52 chars
-        description: 'Service de chauffeur premium à Anvers. Mercedes Classe V, disponible 24h/24. Transfert aéroport Zaventem & Charleroi. Réservez directement via WhatsApp.',    // 151 chars
+        title: 'SAM Luxury | Chauffeur Premium Anvers — Service 24h',
+        // FR — 232 chars
+        description: 'Service de chauffeur premium à Anvers et toute la Belgique. Mercedes Classe V, disponible 24h/24 pour déplacements professionnels et privés. Transfert aéroport Zaventem & Charleroi. Discret, ponctuel, luxueux. Réservez via WhatsApp.',
         keywords: 'taxi anvers, chauffeur premium anvers, service chauffeur anvers, transfert aéroport anvers, mercedes classe v anvers, transport affaires anvers, taxi luxe anvers',
     },
     en: {
         htmlLang: 'en',
         ogLocale: 'en_GB',
-        title: 'SAM Luxury | Premium Chauffeur Service Antwerp',    // 47 chars
-        description: 'Premium private chauffeur service in Antwerp. Mercedes V-Class, available 24/7. Airport transfers to Zaventem & Charleroi. Book instantly via WhatsApp.',    // 150 chars
+        title: 'SAM Luxury | Premium Chauffeur Service Antwerp',
+        // EN — 231 chars
+        description: 'Premium private chauffeur service in Antwerp & across Belgium. Mercedes V-Class, available 24/7 for business and private travel. Airport transfers to Zaventem, Charleroi & Brussels. Discreet, on-time & luxurious. Book via WhatsApp.',
         keywords: 'taxi antwerp, premium chauffeur antwerp, private chauffeur service antwerp, airport transfer antwerp, brussels airport zaventem, mercedes v class antwerp, business chauffeur antwerp',
     },
     es: {
         htmlLang: 'es',
         ogLocale: 'es_ES',
-        title: 'SAM Luxury | Chófer Premium Amberes — Servicio 24h',    // 51 chars
-        description: 'Servicio de chófer premium en Amberes. Mercedes Clase V, 24/7. Traslados al aeropuerto Zaventem & Charleroi. Reserve directamente por WhatsApp.',    // 148 chars
+        title: 'SAM Luxury | Chófer Premium Amberes — Servicio 24h',
+        // ES — 231 chars
+        description: 'Servicio de chófer premium en Amberes y en toda Bélgica. Mercedes Clase V disponible 24/7 para viajes de negocios y privados. Traslados al aeropuerto Zaventem, Charleroi y Bruselas. Discreto, puntual y lujoso. Reserve por WhatsApp.',
         keywords: 'taxi amberes, chófer premium amberes, servicio chófer amberes, traslado aeropuerto zaventem, mercedes clase v amberes, transporte ejecutivo premium amberes',
     },
 };

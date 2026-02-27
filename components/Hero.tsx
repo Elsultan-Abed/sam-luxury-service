@@ -96,6 +96,9 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ t, lang = 'nl' }, ref) => {
             fetchPriority={currentSlide === 0 ? 'high' : 'auto'}
             loading={currentSlide === 0 ? 'eager' : 'lazy'}
             decoding="async"
+            width="1920"
+            height="1080"
+            sizes="100vw"
           />
 
           {/* Premium Dark Cinematic Overlay */}

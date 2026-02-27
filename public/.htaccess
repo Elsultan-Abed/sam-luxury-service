@@ -17,17 +17,19 @@ RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # -----------------------------------------------
-# 3. Serve static files DIRECTLY (fixes sitemap.xml, robots.txt, ads.txt)
-# This MUST come before the SPA catch-all
+# 3. Serve static files DIRECTLY (sitemap.xml, robots.txt, ads.txt, etc.)
 # -----------------------------------------------
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # -----------------------------------------------
-# 4. SPA fallback: all other routes → index.html
+# 4. SPA routing: only /nl/, /fr/, /en/, /es/ → index.html
+#    Root / → /nl/ redirect
+#    Unknown paths → real 404 (→ ErrorDocument 404 → /404.html)
 # -----------------------------------------------
-RewriteRule ^ index.html [L]
+RewriteRule ^$ /nl/ [R=301,L]
+RewriteRule ^(nl|fr|en|es)(\/.*)?$ index.html [L]
 
 # -----------------------------------------------
 # 5. Custom error pages (fixes Custom 404 Error Page test)

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 interface FooterProps {
   t: {
@@ -13,6 +13,17 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ t }) => {
+  // Email injected at runtime only — never in static HTML source
+  const emailRef = useRef<HTMLAnchorElement>(null);
+  useEffect(() => {
+    const u = 'info'; const d = 'samluxuryservice'; const t2 = 'be';
+    const e = `${u}@${d}.${t2}`;
+    if (emailRef.current) {
+      emailRef.current.href = `mailto:${e}`;
+      emailRef.current.textContent = e;
+    }
+  }, []);
+
   return (
     <footer
       id="contact"
@@ -97,13 +108,14 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
                 <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/20">
                   {t.officialInquiries}
                 </span>
-                {/* Email obfuscated to prevent spam harvesting */}
+                {/* Email injected at runtime via useEffect — never in static HTML */}
                 <a
-                  href={`mailto:${'info'}@${'samluxuryservice'}.be`}
+                  ref={emailRef}
+                  href="#"
                   className="text-sm font-light text-white/60 hover:text-white transition-colors"
                   aria-label="Email SAM Luxury Service"
                 >
-                  {'info'}&#64;{'samluxuryservice'}.be
+                  &#9679;&#9679;&#9679;
                 </a>
               </div>
               {/* WhatsApp */}
