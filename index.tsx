@@ -3,6 +3,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import App from './App';
+import AdminPortal from './components/AdminPortal';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -15,6 +16,10 @@ root.render(
       <Routes>
         {/* Root redirect to default language (Flemish Dutch) */}
         <Route path="/" element={<Navigate to="/nl/" replace />} />
+
+        {/* Admin Portal Area */}
+        <Route path="/admin" element={<AdminPortal />} />
+
         {/* Language-specific routes */}
         <Route path="/:lang/*" element={<App />} />
         {/* Fallback */}

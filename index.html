@@ -64,19 +64,16 @@
   <!-- Fonts: Preloaded Google Fonts (non-render-blocking — fixes Render Blocking Resources test) -->
   <!-- Step 1: Preload the CSS with media=print trick, then swap to all -->
   <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,400&family=Plus+Jakarta+Sans:wght@200;300;400;600;800&display=swap"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'" />
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,400&family=Plus+Jakarta+Sans:wght@200;300;400;600;800&family=Cairo:wght@200;300;400;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,400&family=Plus+Jakarta+Sans:wght@200;300;400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,400&family=Plus+Jakarta+Sans:wght@200;300;400;600;800&family=Cairo:wght@200;300;400;600;700;900&display=swap"
       rel="stylesheet" />
   </noscript>
 
   <!-- Font Awesome: non-render-blocking (fixes Render Blocking Resources test) -->
-  <link rel="preload"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    as="style"
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -98,6 +95,7 @@
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             serif: ['Bodoni Moda', 'serif'],
+            arabic: ['Cairo', 'sans-serif'],
           }
         }
       }

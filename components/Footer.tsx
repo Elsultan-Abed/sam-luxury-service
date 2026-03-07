@@ -137,11 +137,13 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-[9px] uppercase tracking-[0.4em]">
             © {new Date().getFullYear()} SAM Luxury Service. {t.copyright}.
           </p>
           <div className="flex items-center gap-6 text-[9px] uppercase tracking-[0.3em] text-white/20">
+            <a href="/admin" className="hover:text-[#D4AF37] transition-colors">Admin</a>
+            <span aria-hidden="true">·</span>
             <span>Antwerp, Belgium</span>
             <span aria-hidden="true">·</span>
             <span>samluxuryservice.be</span>

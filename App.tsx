@@ -18,7 +18,7 @@ import SEOManager from './components/SEOManager';
 import SchemaMarkup, { FAQ_DATA } from './components/SchemaMarkup';
 import FAQSection from './components/FAQSection';
 
-const VALID_LANGS: Language[] = ['nl', 'fr', 'en', 'es'];
+const VALID_LANGS: Language[] = ['nl', 'fr', 'en', 'es', 'ar'];
 
 const App: React.FC = () => {
   const { lang: routeLang } = useParams<{ lang: string }>();
@@ -40,8 +40,13 @@ const App: React.FC = () => {
     navigate(`/${newLang}/`, { replace: true });
   };
 
+  const isRTL = lang === 'ar';
+
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-[#D4AF37] selection:text-black pb-32 lg:pb-0">
+    <div
+      dir={isRTL ? 'rtl' : 'ltr'}
+      className={`min-h-screen bg-black text-white font-sans selection:bg-[#D4AF37] selection:text-black pb-32 lg:pb-0 ${isRTL ? 'font-arabic' : ''}`}
+    >
       {/* SEO: Dynamic meta tags, hreflang, canonical */}
       <SEOManager lang={lang} />
 
